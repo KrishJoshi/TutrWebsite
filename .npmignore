@@ -1,0 +1,38 @@
+.DS_Store
+.nodemonignore
+.sass-cache/
+npm-debug.log
+
+# npm & bower modules
+node_modules/
+public/_
+static
+dist
+
+.bower-*/
+.idea/
+.vagrant/
+
+# virtualenv
+bin/
+build/
+include/
+lib/
+man/
+local/
+tmp/
+
+*.pyc
+*.sqlite3
+*.log
+*.log.*
+.coverage
+
+public/i18n/*.js
+
+server/settings/*.yml  # used to store sensitive information
+
+# used during dev (same as _<fileName> but with interpolations)
+package.json
+bower.json
+Vagrantfile

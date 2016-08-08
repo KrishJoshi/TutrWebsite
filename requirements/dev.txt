@@ -1,0 +1,4 @@
+-r production.txt
+memory_profiler
+django-nose
+Sphinx

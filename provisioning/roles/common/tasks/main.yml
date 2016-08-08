@@ -1,0 +1,37 @@
+---
+  - name: Common | Update apt cache
+    sudo: yes
+    apt:
+      update-cache: yes
+      upgrade: safe
+      cache_valid_time: 3600
+
+  - name: Common | Install common pkg
+    sudo: yes
+    apt: pkg={{ item }} state=installed
+    with_items:
+      - python-dev
+      - build-essential 
+      - python-virtualenv
+      - python-pip
+      - git
+      - wget
+      - python-software-properties
+      - gcc 
+      - gfortran 
+      - g++
+      - zsh
+      - libhdf5-dev
+      - language-pack-en
+    tags: common
+
+  - name: Set locale to en_US.UTF-8
+    sudo: true
+    locale_gen: name="en_US.UTF-8" state=present
+
+  - name: "Build hosts file"
+    lineinfile:
+      dest: /etc/hosts
+      regexp: ".*{{ hostvars[item].ansible_hostname }}$"
+      line: "{{ hostvars[item].ansible_eth1.ipv4.address }} {{ hostvars[item].ansible_hostname }}"
+    with_items: groups['all']
