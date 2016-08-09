@@ -1,34 +1,32 @@
-<!doctype html><html ng-app=lhr70 lang=en><head><meta charset=utf-8><title ng-bind-html=metatags.pageTitle>Heathrow 70</title><meta name=description content={{metatags.description}}><meta name=viewport content="width=device-width"><base href=/ ><meta name=fragment content=!><meta property=og:title content={{metatags.title}}><meta property=og:type content=website><meta property=og:image content={{metatags.image}}><meta property=og:description content={{metatags.description}}><!-- FAV ICON --><link rel="shortcut icon" href=/static/assets/icons/favicon.ico type=image/x-icon><!-- APPLE --><link href=/static/assets/icons/apple-icons/apple-touch-icon.png rel=apple-touch-icon><link href=/static/assets/icons/apple-icons/apple-touch-icon-76x76.png rel=apple-touch-icon sizes=76x76><link href=/static/assets/icons/apple-icons/apple-touch-icon-120x120.png rel=apple-touch-icon sizes=120x120><link href=/static/assets/icons/apple-icons/apple-touch-icon-152x152.png rel=apple-touch-icon sizes=152x152><link href=/static/assets/icons/apple-icons/apple-touch-icon-180x180.png rel=apple-touch-icon sizes=180x180><!-- ANDROID --><link href=/static/assets/icons/android-icons/icon-hires.png rel=icon sizes=192x192><link href=/static/assets/icons/android-icons/icon-normal.png rel=icon sizes=128x128><meta name=theme-color content=#0f0045><meta name=apple-mobile-web-app-status-bar-style content=black-translucent><link rel=stylesheet href=/static//styles/vendor-d3fc317258.css><link rel=stylesheet href=/static//styles/app-b40e730767.css><script src=/static//scripts/modernizr-a6642ffd85.js></script><script src=/static//scripts/vendor-c95853d483.js></script><script src=/static//scripts/app-9caac3f08f.js></script><!-- inject:analytics --><!--Adobe tag manager--><script src=//assets.adobedtm.com/bdb7c229f081f9ffc404356e80a09e4febbd633c/satelliteLib-5dc21eb24c85c0a03b9d1ad270cf7a37116a462b.js></script><!-- endinject --></head><body ng-class="(hasBackground) ? 'has-bg' : ''" class=menu-body><noscript>Please enable JavaScript to view this web page.</noscript><div cookie-consent></div><div class=body-wrapper><!--[if lt IE 9]>
-  ￼<p class="browsehappy">For 70 years, we've been constantly looking to the future. Join in our celebrations by
-    upgrading your browser to the latest edition <br><a href="http://browsehappy.com/">Find out how here</a></p>
-  <![endif]--><navbar></navbar><div ng-cloak><div ui-view autoscroll=true></div><div data-footer></div></div></div><script>var isOldIE = false;
+<!doctype html><html><head><meta charset=utf-8><title></title><meta name=description content=""><meta name=viewport content="width=device-width"><!-- FAV ICON --><link rel="shortcut icon" href=/static/assets/icons/favicon.ico type=image/x-icon><!-- APPLE --><link href=/static/assets/icons/apple-icons/apple-touch-icon.png rel=apple-touch-icon><link href=/static/assets/icons/apple-icons/apple-touch-icon-76x76.png rel=apple-touch-icon sizes=76x76><link href=/static/assets/icons/apple-icons/apple-touch-icon-120x120.png rel=apple-touch-icon sizes=120x120><link href=/static/assets/icons/apple-icons/apple-touch-icon-152x152.png rel=apple-touch-icon sizes=152x152><link href=/static/assets/icons/apple-icons/apple-touch-icon-180x180.png rel=apple-touch-icon sizes=180x180><!-- ANDROID --><link href=/static/assets/icons/android-icons/icon-hires.png rel=icon sizes=192x192><link href=/static/assets/icons/android-icons/icon-normal.png rel=icon sizes=128x128><meta name=theme-color content=#0f0045><meta name=apple-mobile-web-app-status-bar-style content=black-translucent><link rel=stylesheet href=/static//styles/vendor-a3c253c3fc.css><script src=/static//scripts/vendor-fa709413c5.js></script><!-- inject:analytics --><!--Adobe tag manager--><script src=//assets.adobedtm.com/bdb7c229f081f9ffc404356e80a09e4febbd633c/satelliteLib-5dc21eb24c85c0a03b9d1ad270cf7a37116a462b.js></script><!-- endinject --></head><body ng-app=tutrApp><!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]--><!-- Add your site or application content here --><div class="header no-pad"><div class="navbar navbar-default no-round" role=navigation><div class=container><div class=navbar-header><button type=button class="navbar-toggle collapsed" data-toggle=collapse data-target=#js-navbar-collapse><span class=sr-only>Toggle navigation</span> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span></button> <a class=navbar-brand href=#/ >Tutr</a></div><div class="collapse navbar-collapse" id=js-navbar-collapse><ul class="nav navbar-nav"><li class=active><a href=#/ >Home</a></li><li><a ng-href=#/about>About</a></li><li><a ng-href=#/ >Contact</a></li></ul><ul class="nav navbar-nav navbar-right"><li dropdown ng-show="currentUser && messageDialogs.items"><a href=# dropdown-toggle>Messages</a><ul class=dropdown-menu><li ng-repeat="dialog in messageDialogs.items"><a ng-href=/#/messages/{{dialog._id}}>Chat between {{dialog.occupants_ids[0] | qbloxUserById }} and {{dialog.occupants_ids[1] | qbloxUserById }}</a></li></ul></li><li dropdown ng-show=currentUser><a href=# dropdown-toggle>{{currentUser.attributes.firstName}}</a><ul class=dropdown-menu><li><a ng-href=/#/profile>Profile</a></li><li><a ng-href=/#/messages>Messages</a></li><li><a ng-click=logOut()>Logout</a></li></ul></li><li ng-hide=currentUser><a href=/#/login class=btn>Login</a></li><li ng-hide=currentUser><a href=/#/register class=btn>Register</a></li></ul></div></div></div></div><div class=container><div growl></div><div ng-view=""></div></div><div class=footer><div class=container><p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p></div></div><!-- Google Analytics: change UA-XXXXX-X to be your site's ID --><script>!function (A, n, g, u, l, a, r) {
+    A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+        (A[l].q = A[l].q || []).push(arguments)
+      }, A[l].l = +new Date, a = n.createElement(g),
+      r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+  }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-
-  function getIEVersion() {
-    var rv = -1; // Return value assumes failure.
-    if (navigator.appName == 'Microsoft Internet Explorer') {
-      var ua = navigator.userAgent;
-      var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
-      if (re.test(ua) != null)
-        rv = parseFloat(RegExp.$1);
-    }
-    return rv;
-  }
-
-
-  function checkVersion() {
-    var ver = getIEVersion();
-
-    if (ver != -1) {
-      if (ver <= 9.0) {
-        isOldIE = true;
-        if (!window.location.hash) {
-          window.location.href = "/#" + window.location.pathname;
+  ga('create', 'GTM-K2FMGC');
+  ga('send', 'pageview');</script><!-- Async Social SDKs --><div id=fb-root></div><script type=text/javascript>(function (doc, script) {
+    var js,
+      fjs = doc.getElementsByTagName(script)[0],
+      add = function (url, id) {
+        if (doc.getElementById(id)) {
+          return;
         }
-        if (window.location.hash == "#") {
-          window.location.href = "/#/";
-        }
-      }
-    }
-  }
-  checkVersion();</script></body></html>
+        js = doc.createElement(script);
+        js.src = url;
+        id && (js.id = id);
+        fjs.parentNode.insertBefore(js, fjs);
+      };
+    // Facebook SDK
+    add('//connect.facebook.net/en_US/all.js', 'facebook-jssdk');
+    // Twitter SDK
+    add('//platform.twitter.com/widgets.js', 'twitter-wjs');
+  }(document, 'script'));</script><!-- Async resolve promise when FB SDK is loaded, this triggers Parse.FacebookUtils.init() --><script>var fbDeferred = $.Deferred();
+  window.fbPromise = fbDeferred.promise();
+  window.fbAsyncInit = function () {
+    fbDeferred.resolve();
+  };</script></body></html>

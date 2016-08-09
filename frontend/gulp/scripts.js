@@ -10,7 +10,7 @@ var browserSync = require('browser-sync');
 var $ = require('gulp-load-plugins')();
 
 gulp.task('modernizr', function () {
-  gulp.src([path.join(conf.paths.src, '/app/**/*.js'), path.join(conf.paths.src, '/app/**/*.scss')])
+  gulp.src([path.join(conf.paths.src, '/**/*.js'), path.join(conf.paths.src, '/**/*.scss')])
     .pipe(modernizr({
       options: [
         "setClasses"
@@ -31,9 +31,9 @@ gulp.task('scripts', function () {
 
 function buildScripts() {
   gulp.start('modernizr');
-  return gulp.src([path.join(conf.paths.src, '/app/**/*.js'), path.join('!' + conf.paths.src, '/app/**/modernizr.js') ])
+
+  return gulp.src([path.join(conf.paths.src, '/scripts/**/*.js'), path.join('!' + conf.paths.src, '/scripts/**/modernizr.js') ])
     .pipe($.eslint())
     .pipe($.eslint.format())
     .pipe($.size());
-
-};
+}

@@ -26,8 +26,8 @@ exports.paths = {
 exports.wiredep = {
   directory: 'bower_components',
   bowerJson: require('../bower.json'),
-  override: {
-    MasonJS: 'dist/mason.js'
+  overrides: {
+    "bootswatch-dist": {main: "css/bootstrap.min.css"}
   }
 };
 
