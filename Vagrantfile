@@ -17,7 +17,7 @@ Vagrant.configure(2) do |config|
   config.ssh.forward_agent = true
 
   config.vm.provider "virtualbox" do |v|
-      v.name = "LHR70"
+      v.name = "Tutr"
       v.memory = 2064
       v.cpus = 4
   end

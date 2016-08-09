@@ -63,7 +63,7 @@ MIDDLEWARE_CLASSES = [
     'axes.middleware.FailedLoginMiddleware',
 ]
 
-ROOT_URLCONF = 'LHR70.urls'
+ROOT_URLCONF = 'TutrServer.urls'
 
 TEMPLATES = [
     {
@@ -82,7 +82,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'LHR70.wsgi.application'
+WSGI_APPLICATION = 'TutrServer.wsgi.application'
 
 
 # Database
