@@ -1,61 +1,62 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
-require 'yaml'
 
-hosts_config = YAML.load_file('provisioning/vagrant.yml')
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure(2) do |config|
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
 
-ansible_groups = {
-  "dev" => hosts_config.map { |n, conf| n},
-  "all_groups:children" => ["dev"]
-}
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.network :forwarded_port, guest: 8000, host: 8000
+  config.vm.provision "file", source: "django-server.conf", destination: "django-server.conf"
+  config.vm.provision "file", source: "update.sh", destination: "update.sh"
+  config.vm.provision :shell, path: "bootstrap.sh"
+  config.ssh.forward_agent = true
 
-Vagrant.configure("2") do |config|
-  hosts_config.each_with_index do |(node_name, node_config), index|
-    config.vm.define node_name do |machine|
-      machine.vm.box = "ubuntu/trusty64"
-      machine.vm.hostname = "#{node_name}.tutr.com"
-      # machine.vm.network :private_network, ip: node_config['ip']
-      machine.vm.network :private_network, type: 'dhcp'
-
-      # machine.vm.synced_folder ".", "/vagrant" # for Windows users
-      machine.vm.synced_folder ".", "/vagrant", type: "nfs" # use nfs for better performance (OSX and Linux only)
-
-      machine.ssh.forward_agent = true
-      machine.ssh.insert_key = false
-
-      node_config['ports'].each do |port|
-        machine.vm.network :forwarded_port, 
-          host: port['host'], 
-          guest: port['guest'], 
-          id: port['id']
-      end
-
-      if node_config["provider"] == "virtualbox"
-        machine.vm.provider "virtualbox" do |v|
-            v.memory = node_config['memory']
-            v.cpus = node_config['cpus']
-        end
-      else
-        raise '#{ node_config["provider"] } provider not supported'
-      end
-
-      node_config["groups"].each do |group|
-        if ansible_groups[group].nil?
-          ansible_groups[group] = [node_name]
-        else
-          ansible_groups[group] += [node_name]
-        end
-      end
-
-      # provision machines with ansible
-      if index == hosts_config.length - 1
-        machine.vm.provision :ansible do |ansible|
-          ansible.playbook = "provisioning/roles.yml"
-          ansible.groups = ansible_groups
-          # ansible.ask_vault_pass = true
-          ansible.limit = 'all' # Disable default limit
-        end
-      end
-    end
+  config.vm.provider "virtualbox" do |v|
+      v.name = "LHR70"
+      v.memory = 2064
+      v.cpus = 4
   end
+
+  # Create a private network, which allows host-only access to the machine
+  # using a specific IP.
+  # config.vm.network "private_network", ip: "192.168.33.10"
+
+  # Create a public network, which generally matched to bridged network.
+  # Bridged networks make the machine appear as another physical device on
+  # your network.
+  # config.vm.network "public_network"
+
+  # Share an additional folder to the guest VM. The first argument is
+  # the path on the host to the actual folder. The second argument is
+  # the path on the guest to mount the folder. And the optional third
+  # argument is a set of non-required options.
+  # config.vm.synced_folder "../data", "/vagrant_data"
+
+  # Provider-specific configuration so you can fine-tune various
+  # backing providers for Vagrant. These expose provider-specific options.
+  # Example for VirtualBox:
+  #
+  # config.vm.provider "virtualbox" do |vb|
+  #   # Display the VirtualBox GUI when booting the machine
+  #   vb.gui = true
+  #
+  #   # Customize the amount of memory on the VM:
+  #   vb.memory = "1024"
+  # end
+  #
+  # View the documentation for the provider you are using for more
+  # information on available options.
+
+  # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
+  # such as FTP and Heroku are also available. See the documentation at
+  # https://docs.vagrantup.com/v2/push/atlas.html for more information.
+  # config.push.define "atlas" do |push|
+  #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
+  # end
+
 end

@@ -1,4 +1,0 @@
----
-dependencies:
-  - role: nodesource.node
-    sudo: true

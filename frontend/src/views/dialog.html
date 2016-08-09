@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-lg-3 col-md-3 chat-th-material no-pad">
+    <div class="panel no-border">
+      <div class="panel-heading chat-top-bar darker">
+        <div class="col-md-8 col-xs-8">
+          <h3 class="panel-title">Messages</h3>
+        </div>
+      </div>
+      <div class="panel-body msg-container-base round-bottom-left">
+
+        <ul class="list-group pad-top">
+          <li class="list-group-item" ng-repeat="dialog in messageDialogs.items">
+            <span class="badge" ng-show="dialog.unread_messages_count">{{dialog.unread_messages_count}}</span>
+            <a ng-href="/#/messages/{{dialog._id}}">Chat between {{dialog.occupants_ids[0] | qbloxUserById }} and
+              {{dialog.occupants_ids[1] | qbloxUserById }}</a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-9 col-lg-9 chat-th-material no-pad-left">
+    <div class="panel no-border">
+      <div class="panel-heading chat-top-bar">
+        <div class="col-md-8 col-xs-8"><h3 class="panel-title ng-binding"><span class="fa fa-comment-o"></span> Chat between {{dialog.occupants_ids[0] | qbloxUserById }} and
+          {{dialog.occupants_ids[1] | qbloxUserById }}</h3></div>
+      </div>
+      <div class="panel-body msg-container-base messages">
+        <div class="row msg-container" ng-repeat="message in messages.items">
+          <div class="col-md-12 col-xs-12">
+            <div class="chat-msg"
+                 ng-class="{'chat-msg-sent': message.sender_id == currentLoggedInUserId, 'chat-msg-recieved': message.sender_id != currentLoggedInUserId}">
+              <p>{{message.message}}</p>
+
+              <div class="chat-msg-author"><strong ng-hide="message.sender_id == currentLoggedInUserId">{{message.sender_id | qbloxUserById}}</strong><strong ng-show="message.sender_id == currentLoggedInUserId">Me</strong>&nbsp;<span
+                class="date" am-time-ago="message.created_at"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer chat-bottom-bar">
+        <form ng-submit="sendMessage(newMessage)">
+          <div class="input-group"><input type="text"
+                                          class="form-control input-sm chat-input"
+                                          placeholder="You can write here" ng-model="newMessage"><span
+            class="input-group-btn"><input type="submit" class="btn btn-sm chat-submit-button"
+                                           value="Send your message"></span></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

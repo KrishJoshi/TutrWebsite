@@ -1,0 +1,57 @@
+<link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
+<div class="row user-menu-container square">
+  <div class="col-md-12 user-details">
+    <div class="row coralbg white">
+      <div class="col-md-6 no-pad">
+        <div class="user-image">
+          <img src="https://farm7.staticflickr.com/6163/6195546981_200e87ddaf_b.jpg" class="img-responsive thumbnail">
+        </div>
+
+      </div>
+      <div class="col-md-6 no-pad">
+        <div class="user-pad">
+          <h3>{{tutor.attributes.firstName}} {{tutor.attributes.lastName}}</h3>
+          <h4 class="white"><i class="fa fa-check-circle-o"></i> Facebook verified</h4>
+          <h4 class="white"><i class="fa fa-check-circle-o"></i> CRB verified</h4>
+          <h4 class="white"><i class="fa fa-check-circle-o"></i> Qualifications verified</h4>
+
+
+          <button ng-click="connect()" type="button" class="btn btn-labeled btn-info" href="#">
+          <span class="btn-label"><i class="fa fa-pencil"></i></span>Connect
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="row overview">
+      <div class="col-md-10 user-pad text-center">
+        <h3>Connections</h3>
+        <h4>2,784</h4>
+      </div>
+      <div class="col-md-10 user-pad text-center">
+        <h3>Rating</h3>
+        <h4>5 stars</h4>
+      </div>
+      <div class="col-md-10 user-pad text-center">
+        <h3>Reply rate</h3>
+        <h4>89%</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row margin-top-thick">
+  <div class="col-md-12">
+    <b>Subjects:</b>
+    <ul class="list-single-line subjects" ng-repeat="subject in tutor.attributes.subjects">
+      <li class="list-item">{{subject.attributes.name}}</li>
+    </ul>
+  </div>
+</div>
+<hr/>
+<div class="row">
+  <div class="col-md-12">
+    <b>About me:</b>
+
+    <p>{{tutor.attributes.aboutMe}}</p>
+  </div>
+</div>
+
