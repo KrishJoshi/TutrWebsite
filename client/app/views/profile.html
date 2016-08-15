@@ -1,0 +1,134 @@
+<div ng-show="currentUser">
+  <div class="container">
+    <h1>Edit Profile</h1>
+    <hr>
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img ng-show="newImage" ng-src="{{newImage.url}}" type="{{newImage.file.type}}" class="avatar img-circle full-width" alt="avatar">
+          <img ng-show="currentUser.attributes.picture" ng-src="{{currentUser.attributes.picture.url()}}" class="avatar img-circle full-width" alt="avatar">
+          <img ng-hide="currentUser.attributes.picture || newImage" src="http://simpleicon.com/wp-content/uploads/user-2.png" class="avatar img-circle full-width" alt="avatar">
+
+          <h6>Upload a different photo...</h6>
+
+          <input type="file" accept="image/*" image="newImage" class="form-control">
+        </div>
+      </div>
+
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        <!--<div class="alert alert-info alert-dismissable">-->
+        <!--<a class="panel-close close" data-dismiss="alert">×</a>-->
+        <!--<i class="fa fa-coffee"></i>-->
+        <!--This is an <strong>.alert</strong>. Use this to show important messages to the user.-->
+        <!--</div>-->
+
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">First name:</label>
+
+            <div class="col-lg-8">
+              <input class="form-control" type="text" ng-model="currentUser.attributes.firstName">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Last name:</label>
+
+            <div class="col-lg-8">
+              <input class="form-control" type="text" ng-model="currentUser.attributes.lastName">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">About Me:</label>
+
+            <div class="col-lg-8">
+              <textarea class="form-control" type="text" ng-model="currentUser.attributes.aboutMe"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Email:</label>
+
+            <div class="col-lg-8">
+              <input class="form-control" type="text" ng-model="currentUser.attributes.username">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Availability:</label>
+            <div class="col-lg-8">
+              <div class="col-lg-4 no-pad">
+                <input class="form-control" type="text" ng-model="currentUser.attributes.availability.startTime" placeholder="Start time e.g. 9">
+              </div>
+              <div class="col-lg-4">
+                <input class="form-control" type="text" ng-model="currentUser.attributes.availability.endTime" placeholder="End time e.g. 17">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Your Location:</label>
+            <div class="col-md-6">
+              <input class="form-control" placeholder="Postcode" type="text" ng-model="currentUser.attributes.postCode">
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-primary" ng-click="addLocation()">Assign</button>
+            </div>
+            {{currentUser.attributes.location | json}}
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label" ng-show="currentUserType == 'Tutor'">Your Rate(per hour):</label>
+            <label class="col-md-3 control-label" ng-hide="currentUserType == 'Tutor'">Your Budget(per hour):</label>
+
+            <div class="col-md-1 pad width-2">£</div>
+            <div class="col-md-8 rate-col">
+              <input class="form-control" type="text" ng-model="currentUser.attributes.hourRate" placeholder="20">
+            </div>
+          </div>
+          <div class="form-group" ng-show="currentUserType == 'Tutor'">
+            <label class="col-md-3 control-label">Subjects you teach:</label>
+            <div class="col-md-8">
+              <tags-input placeholder="Subject" ng-model="userSubjects">
+                <auto-complete source="subjects"></auto-complete>
+              </tags-input>
+            </div>
+          </div>
+          <div class="form-group" ng-show="currentUserType == 'Tutor'">
+            <label class="col-md-3 control-label">Your highest level of education:</label>
+
+            <div class="col-md-8" >
+              <div class="col-lg-5 no-pad p">
+                <input class="form-control" type="text" ng-model="currentUser.attributes.Degree" placeholder="Degree">
+              </div>
+              <div class="col-lg-1 pad">at</div>
+              <div class="col-lg-6">
+                <input class="form-control" type="text" ng-model="currentUser.attributes.nameOfUniversity" placeholder="Name of University">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-3 control-label">Your're a:</label>
+            <div class="col-md-8 rate-col marg-left pad">
+              <select name="userType" id="" ng-model="currentUserType">
+                <option value="Student">Student</option>
+                <option value="Tutor">Tutor</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+
+            <div class="col-md-8">
+              <input type="submit" class="btn btn-primary" ng-click="save()" value="Save Changes">
+              <span></span>
+              <input type="button" class="btn btn-default" ng-click="cancel()" value="Cancel">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+
+</div>
+<div ng-hide="currentUser"></div>

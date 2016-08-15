@@ -1,0 +1,50 @@
+<div class="col-md-6 col-md-offset-3">
+  <h2>Register</h2>
+
+  <div ng-show="successMessage" class="alert alert-success">{{successMessage}}</div>
+  <div ng-show="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
+  <form name="form" ng-submit="performRegister(register)" role="form">
+    <div class="form-group"
+         ng-class="{ 'has-error': registerForm.firstName.$dirty && registerForm.firstName.$error.required }">
+      <label for="firstName">First Name</label>
+      <input type="text" name="firstName" id="firstName" class="form-control" ng-model="register.firstName" required/>
+      <span ng-show="registerForm.firstName.$dirty && registerForm.firstName.$error.required" class="help-block">First name is required</span>
+    </div>
+    <div class="form-group"
+         ng-class="{ 'has-error': registerForm.lastName.$dirty && registerForm.lastName.$error.required }">
+      <label for="lastName">Last Name</label>
+      <input type="text" name="lastName" id="Text1" class="form-control" ng-model="register.lastName" required/>
+      <span ng-show="registerForm.lastName.$dirty && registerForm.lastName.$error.required" class="help-block">Last name is required</span>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error': registerForm.email.$dirty && registerForm.email.$error.required }">
+      <label for="email">Email Address</label>
+      <input type="email" name="email" id="email" class="form-control" ng-model="register.email" required/>
+      <span ng-show="registerForm.email.$dirty && registerForm.email.$error.required" class="help-block">Email address is required</span>
+    </div>
+    <div class="form-group"
+         ng-class="{ 'has-error': registerForm.password.$dirty && registerForm.password.$error.required }">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" class="form-control" ng-model="register.password" required/>
+      <span ng-show="registerForm.password.$dirty && registerForm.password.$error.required" class="help-block">Password is required</span>
+    </div>
+    <div class="form-group" ng-hide="$root.currentUserType"
+         ng-class="{ 'has-error': registerForm.selectedUserType.$error.required }">
+      <label for="userType" class="control-label input-group">You're a</label>
+
+      <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-default" ng-model="selectedUserType" btn-radio="userType.Student">Student</label>
+        <label class="btn btn-default" ng-model="selectedUserType" btn-radio="userType.Tutor">Tutor</label>
+      </div>
+      <span ng-show="registerForm.selectedUserType.error" class="help-block">User Type is required</span>
+    </div>
+    <div class="form-actions">
+      <button type="submit" ng-disabled="registerForm.$invalid || regsterForm.dataLoading" class="btn btn-primary">
+        Register
+      </button>
+      <a href="#/login" class="btn btn-default">Cancel</a>
+      <img ng-if="regsterForm.dataLoading"
+           src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+      <a href="#/login" class="btn btn-link">Already registered?</a>
+    </div>
+  </form>
+</div>

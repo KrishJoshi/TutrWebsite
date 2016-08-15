@@ -1,0 +1,57 @@
+<div class="jumbotron fadeOnShow" ng-show="$root.currentUserType == $root.userType.Tutor">
+  <h1>Let's get you some students!</h1>
+
+  <p><a class="btn btn-lg btn-success" ng-href="#/login">Login</span></a></p>
+</div>
+
+<div class="jumbotron fadeOnShow" ng-show="$root.currentUserType == $root.userType.Student">
+  <h1>What do you need help with?</h1>
+
+
+  <form ng-submit="goTo()">
+    <p class="lead">
+      <input type="text" ng-model="subjectSelected" placeholder="What subject do you need help with"
+             typeahead="subject.attributes.name for subject in subjects | filter:$viewValue"
+             typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control">
+      <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+
+    <div ng-show="noResults">
+      <i class="glyphicon glyphicon-remove"></i> No Results Found
+    </div>
+    </p>
+    <p>
+      <button type="submit" class="btn btn-lg btn-success">Find me a tutor <span
+        class="glyphicon glyphicon-ok"></span></button>
+    </p>
+  </form>
+</div>
+
+
+<div class="jumbotron">
+  <h1>We &lt;3 Teaching</h1>
+
+  <p class="lead">
+    Are you a...
+  </p>
+
+  <p><a class="btn btn-lg btn-success marg-right" ng-click="isStudent()">Student</a><a
+    class="btn btn-lg btn-success margin" ng-click="isTutor()">Tutor</a></p>
+</div>
+
+<div class="row marketing">
+  <div class="col-md-4">
+    <i class="fa fa-money"></i>
+
+    <h2>It's Free</h2>
+  </div>
+  <div class="col-md-4">
+    <i class="fa fa-university"></i>
+
+    <h2>We verify all the tutors</h2>
+  </div>
+  <div class="col-md-4">
+    <i class="fa fa-mobile"></i>
+
+    <h2>We have an app</h2>
+  </div>
+</div>

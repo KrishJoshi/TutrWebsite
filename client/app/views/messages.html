@@ -1,0 +1,7 @@
+<p>This is the messages view.</p>
+
+<div ng-repeat="dialog in messageDialogs.items">
+ <a ng-href="/#/messages/{{dialog._id}}">{{dialog._id}} Chat between {{dialog.occupants_ids[0] | qbloxUserById }} and {{dialog.occupants_ids[1] | qbloxUserById }}</a>
+</div>
+
+
