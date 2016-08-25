@@ -13,7 +13,9 @@ urlpatterns = [
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^api/', include('api.urls')),
                        url(r'^$', TemplateView.as_view(template_name='index.html')),
-                       #url(r'^.*$', 'core.views.home', name='home')
+                       url(r'^rest-auth/', include('rest_auth.urls')),
+                       url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
+                       url(r'^account/', include('allauth.urls')),
                        ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

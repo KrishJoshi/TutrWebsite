@@ -7,21 +7,65 @@
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
-<link rel="stylesheet" href="{% static 'styles/main.scss' %}"/>
-<link rel="stylesheet" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.css' %}"/>
   <!-- FAV ICON -->
-  <link rel="shortcut icon" href="/static/assets/icons/favicon.ico" type="image/x-icon"/>
+  <link rel="shortcut icon" href="{% static 'images/yeoman.png' %}" type="image/x-icon"/>
 <script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery.js' %}"></script>
 <script type="text/javascript" src="{% static 'bower_components/underscore/underscore.js' %}"></script>
 <script type="text/javascript" src="{% static 'bower_components/bootstrap/dist/js/bootstrap.js' %}"></script>
 <script type="text/javascript" src="{% static 'bower_components/angular/angular.js' %}"></script>
-<script type="text/javascript" src="{% static 'bower_components/angular-route/angular-route.js' %}"></script>
-<script type="text/javascript" src="{% static 'bower_components/angular-cookies/angular-cookies.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular/angular-route.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'bower_components/angular-growl.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular/angular-cookies.js' %}"></script>
+<script src="{% static 'bower_components/angular/angular-sanitize.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular/ui-bootstrap.js' %}"></script>
+<link rel="stylesheet" href="{% static 'bower_components/angular.rangeSlider.css' %}">
+<link rel="stylesheet" href="{% static 'bower_components/animate.min.css' %}">
+ <!-- <link rel="stylesheet" href="{% static 'bower_components/flatly.css' %}">-->
+    <link rel="stylesheet" href="{% static 'bower_components/font-awesome.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'bower_components/image-upload.css' %}" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="{% static 'bower_components/ng-tags-input.css' %}"> 
+    <link href="{% static 'bower_components/image-upload.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'bower_components/chat/style.css' %}">
+    <link rel="stylesheet" href="{% static 'bower_components/angular-growl.min.css' %}">
+
+
 
 <script type="text/javascript" src="{% static 'bower_components/ngDialog/js/ngDialog.js' %}"></script>
-<!-- Tutr app script -->
-<script type="text/javascript" src="{% static 'scripts/app.js' %}"></script>
 
+<script src="{% static 'bower_components/angular.rangeSlider.js'  %}"></script>
+<!-- Simple Chat -->
+<script src="{% static 'bower_components/chat/index.js'  %}"></script>
+    <script src="{% static 'bower_components/image-upload.js' %}"></script>
+    <script src="{% static 'bower_components/ngprogress.min.js' %}"></script>
+    <script src="{% static 'bower_components/ng-tags-input.js' %}"></script>
+    <script src="{% static 'bower_components/angular-touch.js' %}"></script>
+
+    <script src="{% static 'bower_components/angular/angular-resource.js' %}"></script>
+    <script src="{% static 'bower_components/angular.rangeSlider.js' %}"></script>
+    <script src="{% static 'bower_components/angular/angular-cache.js' %}"></script>
+    <script src="{% static 'bower_components/angular/angular-animate.js' %}"></script>
+
+    <script src="{% static 'bower_components/angular-moment.js' %}"></script>
+
+    <script src="{% static 'bower_components/image-upload.js' %}"></script>
+    <script src="{% static 'bower_components/ngprogress.min.js' %}"></script>
+    <script src="{% static 'bower_components/quickblox.js' %}"></script>
+    
+<!-- Tutr app script<script src="{% static 'bower_components/tag-item.js' %}"></script>
+    <script src="{% static 'bower_components/tags.js' %}"></script>
+ -->
+<script type="text/javascript" src="{% static 'scripts/app.js' %}"></script>
+<!-- Tutr directives scripts -->
+<script type="text/javascript" src="{% static 'scripts/directives/image.js' %}"></script>
+<!-- Tutr filters scripts -->
+<script type="text/javascript" src="{% static 'scripts/filters/qbloxuserById.js' %}"></script>
+<!-- Tutr services scripts -->
+<script type="text/javascript" src="{% static 'scripts/services/FacebookPatch.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/services/messageservice.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/services/subjectservice.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/services/tutorservice.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/services/userservice.js' %}"></script>
 <!-- Tutr controllers scripts -->
 <script type="text/javascript" src="{% static 'scripts/controllers/about.js' %}"></script>
 <script type="text/javascript" src="{% static 'scripts/controllers/dialog.js' %}"></script>
@@ -32,20 +76,6 @@
 <script type="text/javascript" src="{% static 'scripts/controllers/register.js' %}"></script>
 <script type="text/javascript" src="{% static 'scripts/controllers/tutor.js' %}"></script>
 <script type="text/javascript" src="{% static 'scripts/controllers/tutors.js' %}"></script>
-<!-- Tutr directives scripts -->
-<script type="text/javascript" src="{% static 'scripts/directives/images.js' %}"></script>
-<!-- Tutr filters scripts -->
-<script type="text/javascript" src="{% static 'scripts/filters/qbloxuserById.js' %}"></script>
-<!-- Tutr services scripts -->
-<script type="text/javascript" src="{% static 'scripts/services/FacebookPatch.js' %}"></script>
-<script type="text/javascript" src="{% static 'scripts/services/messageservice.js' %}"></script>
-<script type="text/javascript" src="{% static 'scripts/services/subjectservice.js' %}"></script>
-<script type="text/javascript" src="{% static 'scripts/services/tutorservice.js' %}"></script>
-<script type="text/javascript" src="{% static 'scripts/services/userservice.js' %}"></script>
-
-
-
-
 
 
   <!-- APPLE -->
@@ -62,6 +92,7 @@
   <meta name="theme-color" content="#0f0045">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+<link rel="stylesheet" href="{% static 'bower_components/bootstrap.css' %}"/>
   <!-- build:css({../static/.tmp/serve,src}) /styles/vendor.css -->
   <!-- bower:css -->
   <!-- run `gulp inject` to automatically populate bower styles dependencies -->
@@ -102,7 +133,6 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
 <![endif]-->
-
 <!-- Add your site or application content here -->
 <div class="header no-pad">
   <div class="navbar navbar-default no-round" role="navigation">

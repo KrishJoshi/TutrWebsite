@@ -16,8 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'parse-angular',
-    'parse-angular.enhance',
+    //'parse-angular',
+    //'parse-angular.enhance',
     'FacebookPatch' /* our facebook angular wrapper so we can use FB.apiAngular instead of FB.api */,
     'ui.bootstrap',
     'angular-cache',
@@ -85,15 +85,15 @@ angular
     angular.extend(CacheFactoryProvider.defaults, {maxAge: 24 * 60 * 60 * 1000});
 
     growlProvider.globalTimeToLive({success: 3000, error: 3000, warning: 3000, info: 4000});
-    growlProvider.globalDisableCountDown(true);
+   // growlProvider.globalDisableCountDown(true);
   })
   .run(function ($rootScope, messageService, UserService) {
     // Parse Setup
-    Parse.initialize("moFYNNMeQQJGz74zgDsbaaLtQfNM4hPgMLdYz54M", "0I3OWlWDuZV5udNdosU6xWNBnbJamgyOPApQDK77");
-    $rootScope.currentUser = Parse.User.current();
+   // Parse.initialize("moFYNNMeQQJGz74zgDsbaaLtQfNM4hPgMLdYz54M", "0I3OWlWDuZV5udNdosU6xWNBnbJamgyOPApQDK77");
+    //$rootScope.currentUser = 'Joseph' //Parse.User.current();
 
     // FACEBOOK init
-    window.fbPromise.then(function () {
+  /*  window.fbPromise.then(function () {
       Parse.FacebookUtils.init({
         // pro-tip: swap App ID out for PROD App ID automatically on deploy using grunt-replace
         appId: 849475151774251, // Facebook App ID
@@ -101,7 +101,7 @@ angular
         xfbml: true, // parse XFBML
         frictionlessRequests: true // recommended
       });
-    });
+    });*/
 
     $rootScope.userType = {
       Student: "Student",
@@ -116,9 +116,10 @@ angular
         $rootScope.blockUser = user;
         $rootScope.messageDialogs =  messageService.dialogs;
       });
-      UserService.getRoleByUser($rootScope.currentUser).then(function (userTypeForServer) {
+       $rootScope.currentUserType = "Tutor"
+     /* UserService.getRoleByUser($rootScope.currentUser).then(function (userTypeForServer) {
         $rootScope.currentUserType = userTypeForServer.attributes.name;
-      });
+      });*/
     };
 
     if ($rootScope.currentUser) {
@@ -128,7 +129,7 @@ angular
 
     // Global log out function
     $rootScope.logOut = function () {
-      Parse.User.logOut();
+      //Parse.User.logOut();
       $rootScope.currentUser = null;
       messageService.logoutFromChat();
     };

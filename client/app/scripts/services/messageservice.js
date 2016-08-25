@@ -56,9 +56,9 @@ angular.module('tutrApp')
       QB.createSession(function (err, result) {
         if (result) {
           var params = {
-            email: parseUser.attributes.username,
-            password: parseUser.id,
-            full_name: parseUser.attributes.firstName
+            email: "kajoengasa@gmail.com",
+            password: "123",
+            full_name: "kajoe"
           };
           QB.users.create(params, function (err, result) {
             if (result) {
@@ -74,7 +74,7 @@ angular.module('tutrApp')
     var loginToChat = function (parseUser) {
       var deferred = $q.defer();
 
-      QB.createSession({email: parseUser.attributes.username, password: parseUser.id}, function (err, res) {
+      QB.createSession({email: "kahihia", password: "128"}, function (err, res) {
         if (res) {
           userLoggedInCallback(res, parseUser, deferred);
         } else {
