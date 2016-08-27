@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'rest_framework',
-    #'accounts',
+    'accounts',
     'django.contrib.sites',
     'rest_framework.authtoken',
     'rest_auth',
@@ -51,11 +51,9 @@ INSTALLED_APPS = [
     'rest_auth.registration',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
+    'api',
     ]
 SITE_ID = 1
-REST_AUTH_SERIALIZERS = {
-    'LOGIN_SERIALIZER': 'core.LoginSerializer.LoginSerializer',
-    }
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True   
@@ -123,6 +121,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                #'django.core.context_processors.request'
               
             ],
         },
@@ -130,7 +129,7 @@ TEMPLATES = [
 ]
 
 # Custom user
-#\AUTH_USER_MODEL = 'accounts.BaseUser'
+AUTH_USER_MODEL = 'accounts.BaseUser'
 
 # REST API
 REST_FRAMEWORK = {
@@ -168,17 +167,17 @@ LOGGING = {
         },
     }
 }
-
+REST_AUTH_REGISTER_SERIALIZERS = {
+        'REGISTER_SERIALIZER': 'core.serializers.RegisterSerializer',
+}
 ########## EMAIL CONFIGURATION
 # SAMPLE CONFIGURATION FOR GMAIL SETUP
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 SITE_ID = 1
-ACCOUNT_EMAIL_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
 ########## END EMAIL CONFIGURATION
 
-REST_SESSION_LOGIN = False
+#REST_SESSION_LOGIN = False
 
 
 ########## MANAGER CONFIGURATION

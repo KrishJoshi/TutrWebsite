@@ -34,12 +34,33 @@ class UserManager(BaseUserManager):
         return self._create_user(email, password, True, True,
                                  **extra_fields)
 
+GENDER_CHOICES = (
+    (u'Male', u'Male'),
+    (u'Female', u'Female'),
+    )
 
+ROLE_CHOICES = (
+    (u'Tutor', u'Tutor'),
+    (u'Student', u'Student'),
+    )
 class BaseUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(_('email address'), unique=True)
     username = models.CharField(max_length=40, unique=True)
     first_name = models.CharField(_('first name'), max_length=30, blank=True)
     last_name = models.CharField(_('last name'), max_length=30, blank=True)
+    gender= models.CharField(max_length=10, choices=GENDER_CHOICES, blank=True)
+    hourrate = models.CharField(_('Hour Rate'), max_length=30, blank=True)
+    subjects = models.CharField(_('Subjects'), max_length=30, blank=True)
+    education = models.CharField(_('education'), max_length=30, blank=True)
+    degree = models.CharField(_('degree'), max_length=30, blank=True)
+    postcode = models.CharField(_('postcode'), max_length=30, blank=True)
+    location = models.CharField(_('location'), max_length=30, blank=True)
+    name_of_university = models.CharField(_('name of University'), max_length=30, blank=True)
+    availability = models.CharField(_('Availability'), max_length=30, blank=True)
+    about = models.CharField(_('About Me'), max_length=30, blank=True)
+    role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='Student')
+    avatar = models.ImageField('profile picture', upload_to='static/media/images/avatars/', null=True, blank=True)
+  
     is_staff = models.BooleanField(_('staff status'), default=False,
                                    help_text=_('Designates whether the user can log into this admin '
                                                'site.'))
