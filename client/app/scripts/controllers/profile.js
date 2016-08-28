@@ -12,17 +12,33 @@
 // TODO: Add saved message
 angular.module('tutrApp')
   .controller('ProfileCtrl', function ($scope, $q, $rootScope, UserService, subjectService, growl) {
-
-    var currentUser = $rootScope.currentUser;
+	$scope.model = {'email':'', 'first_name':'', 'last_name':'', 'gender':'', 'hourrate':'', 'subjects':'', 'education':'', 'degree':'', 'postcode':'', 'location':'', 'name_of_university':'', 'availability':'', 'about':'', 'role':'', 'avatar':''};
+	UserService.profile().then(function(data){
+  		$scope.model = data;
+  	});
+  	
+  	
+     $scope.updateProfile = function(formData, model){
+      $scope.errors = [];
+ UserService.updateProfile(model)
+        .then(function(data){
+        	// success case
+        },function(data){
+        	// error case
+        	$scope.error = data;
+        });
+      
+    }
+   console.log($scope.model)
+var currentUser = $scope.model;
     var userBackup = angular.copy($rootScope.currentUser);
-    var subjectsBackup = currentUser.attributes.subjects || [];
+    var subjectsBackup = currentUser.subjects || [];
     var typeBackup;
-
     $scope.userSubjects = [];
 
     // Start and End time
-    if(typeof($rootScope.currentUser.attributes.availability) === "string") {
-      $rootScope.currentUser.attributes.availability = {startTime:"", endTime:""};
+    if(typeof($rootScope.currentUser.availability) === "string") {
+      $rootScope.currentUser.availability = {startTime:"", endTime:""};
     }
 
     // Get subject list for auto suggest
@@ -30,13 +46,13 @@ angular.module('tutrApp')
     subjectService.getAllSubjects().then(function (result) {
       for (var i = 0; i < result.length; i++) {
         var subject = result[i];
-        $scope.subjects.push(subject.attributes.name);
+        $scope.subjects.push(subject.name);
       }
     });
 
     var getSubject = function (subjectId) {
       subjectService.getSubjectById(subjectId).then(function (subject) {
-        var subjectText = {text: subject.attributes.name};
+        var subjectText = {text: subject.name};
         $scope.userSubjects.push(subjectText);
       });
     };
@@ -48,13 +64,13 @@ angular.module('tutrApp')
     }
 
 
-    // Get user type
+   /* // Get user type
     UserService.getRoleByUser(currentUser).then(function (userTypeForServer) {
-      typeBackup = userTypeForServer.attributes.name;
-      $scope.currentUserType = userTypeForServer.attributes.name;
+      typeBackup = userTypeForServer.name;
+      $scope.currentUserType = userTypeForServer.name;
     }, function (error) {
       console.log(error);
-    });
+    });*/
 
     // For image generation
     function generateUUID() {
@@ -73,7 +89,7 @@ angular.module('tutrApp')
         var fileType = $scope.newImage.file.type.split("/")[1];
         var file = new Parse.File(generateUUID() + "." + fileType, {base64: $scope.newImage.dataURL});
         file.save().then(function (image) {
-          $rootScope.currentUser.attributes.picture = image;
+          $rootScope.currentUser.picture = image;
           deferred.resolve();
         });
       } else {
@@ -85,14 +101,14 @@ angular.module('tutrApp')
     $scope.addLocation = function () {
       console.log("run");
       var deferred = $q.defer();
-      if ($rootScope.currentUser.attributes.postCode !== userBackup.attributes.postCode) {
+      if ($rootScope.currentUser.postCode !== userBackup.postCode) {
         var locationApi = "http://maps.googleapis.com/maps/api/geocode/json?address={{postCode}},+UK&sensor=false";
-        $.get(locationApi.replace("{{postCode}}", $rootScope.currentUser.attributes.postCode), function (returnData) {
+        $.get(locationApi.replace("{{postCode}}", $rootScope.currentUser.postCode), function (returnData) {
           if (returnData.status === 'OK') {
 
             var loc = returnData.results[0].geometry.location;
             console.log(loc);
-            $rootScope.currentUser.attributes.location = new Parse.GeoPoint({latitude: loc.lat, longitude: loc.lng});
+            $rootScope.currentUser.location = new Parse.GeoPoint({latitude: loc.lat, longitude: loc.lng});
             deferred.resolve();
           } else {
             deferred.resolve();

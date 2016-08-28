@@ -15,13 +15,11 @@ angular.module('tutrApp')
         UserService.signIn(form.email, form.password)
         .then(function(data){
         	// success case
-		$rootScope.currentUser = data.user;
-        $rootScope.$apply();
-
-        $rootScope.loginToChat();
-
-        $window.location.href = '/#/profile';
-         console.log(data);
+				$rootScope.currentUser = UserService.authPromise;
+				$rootScope.$apply();
+				$rootScope.loginToChat();
+				$window.location.href = '/#/profile';
+         
         },function(data){
         	// error case
         	$scope.errorMessage = "Unable to log in: " + data;

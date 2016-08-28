@@ -23,12 +23,20 @@ angular.module('tutrApp')
         }
       }
 
-      var promise = UserService.register(form);
-      promise.then(function () {
-        $scope.successMessage = "Thank you " + form.firstName + ", you have been successfully registered";
-      }, function (error) {
-        $scope.errorMessage = "Unable to register: " + error.message;
-      });
+      var promise = UserService.register(form.email, form.password, form.firstName, form.lastName, $rootScope.currentUserType)
+        .then(function(data){
+        	// success case
+        	 $scope.successMessage = "Thank you " + form.firstName + ", you have been successfully registered";
+        	$scope.complete = true;
+          messageService.loginToChat(user);
+          $rootScope.currentUser = user;
+          $rootScope.$apply();
+        },function(data){
+        	// error case
+        $scope.errorMessage = "Unable to register: " + data;
+        });
+   
+
 
     };
   });

@@ -24,50 +24,50 @@
         <!--This is an <strong>.alert</strong>. Use this to show important messages to the user.-->
         <!--</div>-->
 
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal" role="form" name="userProfileForm" ng-submit="updateProfile(userProfileForm, model)" >
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
 
             <div class="col-lg-8">
-              <input class="form-control" type="text" ng-model="currentUser.attributes.firstName">
+              <input class="form-control" type="text" ng-model="model.first_name">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Last name:</label>
 
             <div class="col-lg-8">
-              <input class="form-control" type="text" ng-model="currentUser.attributes.lastName">
+              <input class="form-control" type="text" ng-model="model.last_name">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">About Me:</label>
 
             <div class="col-lg-8">
-              <textarea class="form-control" type="text" ng-model="currentUser.attributes.aboutMe"></textarea>
+              <textarea class="form-control" type="text" ng-model="model.about"></textarea>
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
 
             <div class="col-lg-8">
-              <input class="form-control" type="text" ng-model="currentUser.attributes.username">
+              <input class="form-control" type="text" ng-model="model.email">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Availability:</label>
             <div class="col-lg-8">
               <div class="col-lg-4 no-pad">
-                <input class="form-control" type="text" ng-model="currentUser.attributes.availability.startTime" placeholder="Start time e.g. 9">
+                <input class="form-control" type="text" ng-model="model.availability.startTime" placeholder="Start time e.g. 9">
               </div>
               <div class="col-lg-4">
-                <input class="form-control" type="text" ng-model="currentUser.attributes.availability.endTime" placeholder="End time e.g. 17">
+                <input class="form-control" type="text" ng-model="model.availability.endTime" placeholder="End time e.g. 17">
               </div>
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Your Location:</label>
             <div class="col-md-6">
-              <input class="form-control" placeholder="Postcode" type="text" ng-model="currentUser.attributes.postCode">
+              <input class="form-control" placeholder="Postcode" type="text" ng-model="model.postcode">
             </div>
             <div class="col-md-2">
               <button class="btn btn-primary" ng-click="addLocation()">Assign</button>
@@ -75,15 +75,15 @@
             {{currentUser.attributes.location | json}}
           </div>
           <div class="form-group">
-            <label class="col-md-3 control-label" ng-show="currentUserType == 'Tutor'">Your Rate(per hour):</label>
-            <label class="col-md-3 control-label" ng-hide="currentUserType == 'Tutor'">Your Budget(per hour):</label>
+            <label class="col-md-3 control-label" ng-show="model.role == 'Tutor'">Your Rate(per hour):</label>
+            <label class="col-md-3 control-label" ng-hide="model.role == 'Tutor'">Your Budget(per hour):</label>
 
             <div class="col-md-1 pad width-2">£</div>
             <div class="col-md-8 rate-col">
-              <input class="form-control" type="text" ng-model="currentUser.attributes.hourRate" placeholder="20">
+              <input class="form-control" type="text" ng-model="model.hourrate" placeholder="20">
             </div>
           </div>
-          <div class="form-group" ng-show="currentUserType == 'Tutor'">
+          <div class="form-group" ng-show="model.role == 'Tutor'">
             <label class="col-md-3 control-label">Subjects you teach:</label>
             <div class="col-md-8">
               <tags-input placeholder="Subject" ng-model="userSubjects">
@@ -91,16 +91,16 @@
               </tags-input>
             </div>
           </div>
-          <div class="form-group" ng-show="currentUserType == 'Tutor'">
+          <div class="form-group" ng-show="model.role == 'Tutor'">
             <label class="col-md-3 control-label">Your highest level of education:</label>
 
             <div class="col-md-8" >
               <div class="col-lg-5 no-pad p">
-                <input class="form-control" type="text" ng-model="currentUser.attributes.Degree" placeholder="Degree">
+                <input class="form-control" type="text" ng-model="model.Degree" placeholder="Degree">
               </div>
               <div class="col-lg-1 pad">at</div>
               <div class="col-lg-6">
-                <input class="form-control" type="text" ng-model="currentUser.attributes.nameOfUniversity" placeholder="Name of University">
+                <input class="form-control" type="text" ng-model="model.name_of_university" placeholder="Name of University">
               </div>
             </div>
           </div>
@@ -108,7 +108,7 @@
           <div class="form-group">
             <label class="col-md-3 control-label">Your're a:</label>
             <div class="col-md-8 rate-col marg-left pad">
-              <select name="userType" id="" ng-model="currentUserType">
+              <select name="userType" id="" ng-model="model.role">
                 <option value="Student">Student</option>
                 <option value="Tutor">Tutor</option>
               </select>
@@ -118,7 +118,7 @@
             <label class="col-md-3 control-label"></label>
 
             <div class="col-md-8">
-              <input type="submit" class="btn btn-primary" ng-click="save()" value="Save Changes">
+              <input type="submit" class="btn btn-primary"  value="Save Changes">
               <span></span>
               <input type="button" class="btn btn-default" ng-click="cancel()" value="Cancel">
             </div>

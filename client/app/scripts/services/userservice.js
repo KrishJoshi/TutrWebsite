@@ -17,7 +17,7 @@ angular.module('tutrApp')
         'request': function(args) {
             // Let's retrieve the token from the cookie, if available
             if($cookies.token){
-                $http.defaults.headers.common.Authorization = 'Token ' + $cookies.token;
+                $http.defaults.headers.common['Authorization'] = 'Token ' + $cookies.token;
             }
             // Continue
             params = args.params || {}
@@ -64,14 +64,18 @@ angular.module('tutrApp')
             }));
             return deferred.promise;
         },
-        'register': function(username,password1,password2,email,more){
+        'register': function(email,password,firstName,lastName){
+			console.log($rootScope.currentUserType);
             var data = {
-                'username':username,
-                'password1':password1,
-                'password2':password2,
-                'email':email
+                'email':email,
+                'password1':password,
+                'password2':password,
+                'first_name':firstName,
+                'last_name':lastName,
+                'role':$rootScope.currentUserType
             }
-            data = angular.extend(data,more);
+            console.log(data);
+            data = angular.extend(data);
             return this.request({
                 'method': "POST",
                 'url': "/registration/",
@@ -89,9 +93,10 @@ angular.module('tutrApp')
                 }
             }).then(function(data){
                 if(!djangoAuth.use_session){
-                    $http.defaults.headers.common.Authorization = 'Token ' + data.key;
+                    $http.defaults.headers.common['Authorization'] = 'Token ' + data.key;
                     $cookies.token = data.key;
                 }
+   
                 djangoAuth.authenticated = true;
                 $rootScope.$broadcast("djangoAuth.logged_in", data);
             });
@@ -102,7 +107,7 @@ angular.module('tutrApp')
                 'method': "POST",
                 'url': "/logout/"
             }).then(function(data){
-                delete $http.defaults.headers.common.Authorization;
+                delete $http.defaults.headers.common['Authorization'];
                 delete $cookies.token;
                 djangoAuth.authenticated = false;
                 $rootScope.$broadcast("djangoAuth.logged_out");

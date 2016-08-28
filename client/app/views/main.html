@@ -11,7 +11,7 @@
   <form ng-submit="goTo()">
     <p class="lead">
       <input type="text" ng-model="subjectSelected" placeholder="What subject do you need help with"
-             typeahead="subject.attributes.name for subject in subjects | filter:$viewValue"
+             typeahead="subject.name for subject in subjects | filter:$viewValue"
              typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control">
       <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
 

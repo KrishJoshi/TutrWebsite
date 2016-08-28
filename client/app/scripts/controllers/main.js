@@ -16,10 +16,11 @@ angular.module('tutrApp')
 
 
 
-    /*subjectService.getAllSubjects().then(function(result){
-        $scope.subjects = result;
+    subjectService.getAllSubjects().then(function(result){
+        $scope.subjects = result.data;
+        console.log($scope.subjects)
 	    });
-*/
+
     $scope.isStudent = function () {
       $rootScope.currentUserType = $rootScope.userType.Student;
     };

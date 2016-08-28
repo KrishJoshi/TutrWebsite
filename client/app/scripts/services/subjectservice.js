@@ -8,11 +8,11 @@
  * Factory in the tutrApp.
  */
 angular.module('tutrApp')
-  .factory('subjectService', function ($q,CacheFactory) {
+  .factory('subjectService', function ($q,CacheFactory, $http, $rootScope) {
     // Service logic
 
     var subjectCacheId = 'subjectCache';
-
+	
     if (!CacheFactory.get(subjectCacheId)) {
       // or CacheFactory('bookCache', { ... });
       CacheFactory.createCache(subjectCacheId, {
@@ -23,8 +23,8 @@ angular.module('tutrApp')
     var subjectCache = CacheFactory.get(subjectCacheId);
 
     var getAllSubjects = function () {
-   
-      return "here";
+		 return $http.get("/api/subjects/")
+        
     };
 
     var getSubject = function (subjectName) {

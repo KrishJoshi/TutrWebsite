@@ -32,52 +32,102 @@ angular
       .when('/', {
         templateUrl: '/static/views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'main'
+        controllerAs: 'main',
+        resolve: {
+          authenticated: ['UserService', function(UserService){
+            return UserService.authenticationStatus();
+          }],
+        }
       })
       .when('/about', {
         templateUrl: '/static/views/about.html',
         controller: 'AboutCtrl',
-        controllerAs: 'about'
+        controllerAs: 'about',
+         resolve: {
+          authenticated: ['UserService', function(UserService){
+            return UserService.authenticationStatus();
+          }],
+        }
       })
       .when('/tutors/', {
         templateUrl: '/static/views/tutors.html',
         controller: 'TutorsCtrl',
-        controllerAs: 'tutors'
+        controllerAs: 'tutors',
+         resolve: {
+          authenticated: ['UserService', function(UserService){
+            return UserService.authenticationStatus();
+          }],
+        }
       })
       .when('/tutors/:subject', {
         templateUrl: '/static/views/tutors.html',
         controller: 'TutorsCtrl',
-        controllerAs: 'tutors'
+        controllerAs: 'tutors',
+         resolve: {
+          authenticated: ['UserService', function(UserService){
+            return UserService.authenticationStatus();
+          }],
+        }
       })
       .when('/tutor/:tutorId', {
         templateUrl: '/static/views/tutor.html',
         controller: 'TutorCtrl',
-        controllerAs: 'tutor'
+        controllerAs: 'tutor',
+         resolve: {
+          authenticated: ['UserService', function(UserService){
+            return UserService.authenticationStatus();
+          }],
+        }
       })
       .when('/login', {
         templateUrl: '/static/views/login.html',
         controller: 'LoginCtrl',
-        controllerAs: 'login'
+        controllerAs: 'login',
+         resolve: {
+          authenticated: ['UserService', function(UserService){
+            return UserService.authenticationStatus();
+          }],
+        }
       })
       .when('/register', {
         templateUrl: '/static/views/register.html',
         controller: 'RegisterCtrl',
-        controllerAs: 'register'
+        controllerAs: 'register',
+         resolve: {
+          authenticated: ['UserService', function(UserService){
+            return UserService.authenticationStatus();
+          }],
+        }
       })
       .when('/messages', {
         templateUrl: '/static/views/messages.html',
         controller: 'MessagesCtrl',
-        controllerAs: 'messages'
+        controllerAs: 'messages',
+         resolve: {
+          authenticated: ['UserService', function(UserService){
+            return UserService.authenticationStatus();
+          }],
+        }
       })
       .when('/messages/:dialogId', {
         templateUrl: '/static/views/dialog.html',
         controller: 'DialogCtrl',
-        controllerAs: 'dialog'
+        controllerAs: 'dialog',
+         resolve: {
+          authenticated: ['UserService', function(UserService){
+            return UserService.authenticationStatus();
+          }],
+        }
       })
       .when('/profile', {
         templateUrl: '/static/views/profile.html',
         controller: 'ProfileCtrl',
-        controllerAs: 'profile'
+        controllerAs: 'profile',
+         resolve: {
+          authenticated: ['UserService', function(UserService){
+            return UserService.authenticationStatus();
+          }],
+        }
       })
       .otherwise({
         redirectTo: '/'
@@ -87,10 +137,15 @@ angular
     growlProvider.globalTimeToLive({success: 3000, error: 3000, warning: 3000, info: 4000});
    // growlProvider.globalDisableCountDown(true);
   })
-  .run(function ($rootScope, messageService, UserService) {
+  .run(function ($rootScope, messageService, UserService, $http) {
     // Parse Setup
    // Parse.initialize("moFYNNMeQQJGz74zgDsbaaLtQfNM4hPgMLdYz54M", "0I3OWlWDuZV5udNdosU6xWNBnbJamgyOPApQDK77");
-    //$rootScope.currentUser = 'Joseph' //Parse.User.current();
+   UserService.initialize('//127.0.0.1:8000/rest-auth', false);
+
+if ($http.defaults.headers.common['Authorization'] != undefined){
+	$rootScope.currentUser = UserService.authPromise;
+}
+console.log( $http.defaults.headers.common['Authorization'])
 
     // FACEBOOK init
   /*  window.fbPromise.then(function () {
@@ -129,7 +184,7 @@ angular
 
     // Global log out function
     $rootScope.logOut = function () {
-      //Parse.User.logOut();
+      UserService.logout();
       $rootScope.currentUser = null;
       messageService.logoutFromChat();
     };
