@@ -167,9 +167,13 @@ LOGGING = {
         },
     }
 }
+REST_AUTH_SERIALIZERS = {
+        'USER_DETAILS_SERIALIZER': 'core.serializers.UserDetailsView',
+        }
 REST_AUTH_REGISTER_SERIALIZERS = {
         'REGISTER_SERIALIZER': 'core.serializers.RegisterSerializer',
-}
+
+        }
 ########## EMAIL CONFIGURATION
 # SAMPLE CONFIGURATION FOR GMAIL SETUP
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
