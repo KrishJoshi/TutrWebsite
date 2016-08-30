@@ -4,17 +4,16 @@
     <hr>
     <div class="row">
       <!-- left column -->
-      <div class="col-md-3">
-        <div class="text-center">
-          <img ng-show="newImage" ng-src="{{newImage.url}}" type="{{newImage.file.type}}" class="avatar img-circle full-width" alt="avatar">
-          <img ng-show="currentUser.attributes.picture" ng-src="{{currentUser.attributes.picture.url()}}" class="avatar img-circle full-width" alt="avatar">
-          <img ng-hide="currentUser.attributes.picture || newImage" src="http://simpleicon.com/wp-content/uploads/user-2.png" class="avatar img-circle full-width" alt="avatar">
-
-          <h6>Upload a different photo...</h6>
-
-          <input type="file" accept="image/*" image="newImage" class="form-control">
-        </div>
-      </div>
+      <div class="col-md-3"  >	   <div class="text-center">
+       <section class="drop" >
+       <img ng-src="{{link || model.avatar}}" class="avatar img-circle full-width" alt="avatar">
+       <br>{{message}}</br>
+     
+     <button ng-show="link" class="btn btn-primary" ng-click="model.avatar = link">Update Avator</button> 
+    </section>
+     
+       </div>
+       </div>
 
       <!-- edit form column -->
       <div class="col-md-9 personal-info">
@@ -57,10 +56,10 @@
             <label class="col-lg-3 control-label">Availability:</label>
             <div class="col-lg-8">
               <div class="col-lg-4 no-pad">
-                <input class="form-control" type="text" ng-model="model.availability.startTime" placeholder="Start time e.g. 9">
+                <input class="form-control" type="text" ng-model="model.availability_from | date:'medium'" placeholder="Start time e.g. 9">
               </div>
               <div class="col-lg-4">
-                <input class="form-control" type="text" ng-model="model.availability.endTime" placeholder="End time e.g. 17">
+                <input class="form-control" type="text" ng-model="model.availability_to | date:'medium'" placeholder="End time e.g. 17">
               </div>
             </div>
           </div>

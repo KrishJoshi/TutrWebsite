@@ -12,24 +12,29 @@
 // TODO: Add saved message
 angular.module('tutrApp')
   .controller('ProfileCtrl', function ($scope, $q, $rootScope, UserService, subjectService, growl) {
-	$scope.model = {'email':'', 'first_name':'', 'last_name':'', 'gender':'', 'hourrate':'', 'subjects':'', 'education':'', 'degree':'', 'postcode':'', 'location':'', 'name_of_university':'', 'availability':'', 'about':'', 'role':'', 'avatar':''};
+	$scope.model = {'email':'', 'first_name':'', 'last_name':'', 'gender':'', 'hourrate':'', 'subjects':'', 'education':'', 'degree':'', 'postcode':'', 'location':'', 'name_of_university':'', 'availability_from': '', 'availability_to': '', 'about':'', 'role':'', 'avatar':''};
 	UserService.profile().then(function(data){
   		$scope.model = data;
+  		//$scope.model.avatar = $scope.link
+  		console.log($scope.link)
   	});
   	
   	
      $scope.updateProfile = function(formData, model){
-      $scope.errors = [];
+     
  UserService.updateProfile(model)
         .then(function(data){
         	// success case
+        	 growl.success("User changes saved successfully!");
         },function(data){
         	// error case
-        	$scope.error = data;
+        	growl.error(data);
         });
       
     }
-   console.log($scope.model)
+   
+        
+              
 var currentUser = $scope.model;
     var userBackup = angular.copy($rootScope.currentUser);
     var subjectsBackup = currentUser.subjects || [];

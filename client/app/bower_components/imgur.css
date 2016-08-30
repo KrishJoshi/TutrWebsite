@@ -1,0 +1,33 @@
+section.drop {
+	padding-top:20px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+section.drop h2 {
+    color: rgba(0, 0, 0,.25);
+    font-weight: normal;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, .5);
+}
+
+section.drop input {
+    background-color: rgba(0, 0, 0, .1);
+    border: 0;
+    font-size: 18px;
+    bottom: 20px;
+    left: 20px;
+    outline: none;
+    padding: 25px 30px;
+    border-radius: 3px;
+    width: 40%;
+    position: absolute;
+}
+section.drop img {
+height:150px;
+width:150px;
+}

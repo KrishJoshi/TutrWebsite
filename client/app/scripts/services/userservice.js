@@ -101,6 +101,26 @@ angular.module('tutrApp')
                 $rootScope.$broadcast("djangoAuth.logged_in", data);
             });
         },
+         'facebook': function(access_token, code){
+            var djangoAuth = this;
+            return this.request({
+                'method': "POST",
+                'url': "/facebook/",
+                'data':{
+					'access_token':access_token,
+                    'code':code
+                }
+            }).then(function(data){
+				console.log(data);
+                if(!djangoAuth.use_session){
+                    $http.defaults.headers.common['Authorization'] = 'Token ' + data.key;
+                    $cookies.token = data.key;
+                }
+   
+                djangoAuth.authenticated = true;
+                $rootScope.$broadcast("djangoAuth.logged_in", data);
+            });
+        },
         'logout': function(){
             var djangoAuth = this;
             return this.request({

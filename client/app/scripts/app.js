@@ -18,7 +18,7 @@ angular
     'ngTouch',
     //'parse-angular',
     //'parse-angular.enhance',
-    'FacebookPatch' /* our facebook angular wrapper so we can use FB.apiAngular instead of FB.api */,
+    //'FacebookPatch' /* our facebook angular wrapper so we can use FB.apiAngular instead of FB.api */,
     'ui.bootstrap',
     'angular-cache',
     'ui-rangeSlider',
@@ -26,7 +26,8 @@ angular
     'angular-growl',
     'ngTagsInput',
   'irontec.simpleChat',
-  'angularMoment'])
+  'angularMoment',
+  'ngImgur'])
   .config(function ($routeProvider, CacheFactoryProvider, growlProvider) {
     $routeProvider
       .when('/', {
@@ -140,7 +141,7 @@ angular
   .run(function ($rootScope, messageService, UserService, $http) {
     // Parse Setup
    // Parse.initialize("moFYNNMeQQJGz74zgDsbaaLtQfNM4hPgMLdYz54M", "0I3OWlWDuZV5udNdosU6xWNBnbJamgyOPApQDK77");
-   UserService.initialize('http://178.62.41.63:8000/rest-auth', false);
+   UserService.initialize('http://178.62.41.63/:8000/rest-auth', false);
 
 if ($http.defaults.headers.common['Authorization'] != undefined){
 	$rootScope.currentUser = UserService.authPromise;

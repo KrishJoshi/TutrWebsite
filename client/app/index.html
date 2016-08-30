@@ -51,17 +51,19 @@
     <script src="{% static 'bower_components/image-upload.js' %}"></script>
     <script src="{% static 'bower_components/ngprogress.min.js' %}"></script>
     <script src="{% static 'bower_components/quickblox.js' %}"></script>
-    
+        <script type="text/javascript" src="{% static 'bower_components/ng-imgur.js' %}"></script>
 <!-- Tutr app script<script src="{% static 'bower_components/tag-item.js' %}"></script>
     <script src="{% static 'bower_components/tags.js' %}"></script>
  -->
 <script type="text/javascript" src="{% static 'scripts/app.js' %}"></script>
 <!-- Tutr directives scripts -->
+
+<script type="text/javascript" src="{% static 'scripts/directives/Drop.js' %}"></script>
 <script type="text/javascript" src="{% static 'scripts/directives/image.js' %}"></script>
 <!-- Tutr filters scripts -->
 <script type="text/javascript" src="{% static 'scripts/filters/qbloxuserById.js' %}"></script>
 <!-- Tutr services scripts -->
-<script type="text/javascript" src="{% static 'scripts/services/FacebookPatch.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/services/FacebookService.js' %}"></script>
 <script type="text/javascript" src="{% static 'scripts/services/messageservice.js' %}"></script>
 <script type="text/javascript" src="{% static 'scripts/services/subjectservice.js' %}"></script>
 <script type="text/javascript" src="{% static 'scripts/services/tutorservice.js' %}"></script>
@@ -92,6 +94,7 @@
   <meta name="theme-color" content="#0f0045">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+<link rel="stylesheet" href="{% static 'bower_components/imgur.css' %}"/>
 <link rel="stylesheet" href="{% static 'bower_components/bootstrap.css' %}"/>
   <!-- build:css({../static/.tmp/serve,src}) /styles/vendor.css -->
   <!-- bower:css -->
@@ -129,6 +132,23 @@
   <!-- endinject -->
 </head>
 <body ng-app="tutrApp">
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1151126811600925',
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 <!--[if lte IE 8]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
@@ -207,37 +227,6 @@
   ga('send', 'pageview');
 </script>
 
-<!-- Async Social SDKs -->
-<div id="fb-root"></div>
 
-<script type="text/javascript">
-  (function (doc, script) {
-    var js,
-      fjs = doc.getElementsByTagName(script)[0],
-      add = function (url, id) {
-        if (doc.getElementById(id)) {
-          return;
-        }
-        js = doc.createElement(script);
-        js.src = url;
-        id && (js.id = id);
-        fjs.parentNode.insertBefore(js, fjs);
-      };
-    // Facebook SDK
-    add('//connect.facebook.net/en_US/all.js', 'facebook-jssdk');
-    // Twitter SDK
-    add('//platform.twitter.com/widgets.js', 'twitter-wjs');
-  }(document, 'script'));
-</script>
-
-
-<!-- Async resolve promise when FB SDK is loaded, this triggers Parse.FacebookUtils.init() -->
-<script>
-  var fbDeferred = $.Deferred();
-  window.fbPromise = fbDeferred.promise();
-  window.fbAsyncInit = function () {
-    fbDeferred.resolve();
-  };
-</script>
 </body>
 </html>

@@ -8,7 +8,7 @@
  * Controller of the tutrApp
  */
 angular.module('tutrApp')
-  .controller('LoginCtrl', function($scope, $rootScope, messageService, UserService, $window) {
+  .controller('LoginCtrl', function($scope, $rootScope, messageService, UserService, $window, $location, Facebook) {
    
     $scope.performLogin =  function(form){
     
@@ -33,7 +33,30 @@ angular.module('tutrApp')
 
       //Parse.FacebookUtils.logIn(null, loginHandler);
     };
-
+    $scope.login_fb = function(){
+           Facebook.login().then(function(response){
+               //we come here only if JS sdk login was successful so lets 
+               //make a request to our new view. I use Restangular, one can
+               //use regular http request as well.
+               
+               var code = 'Facebook';
+               var access_token = response.authResponse.accessToken;
+              UserService.facebook(access_token, code)
+        .then(function(data){
+        	// success case
+        	console.log(data);
+				$rootScope.currentUser = UserService.authPromise;
+				$rootScope.$apply();
+				$rootScope.loginToChat();
+				$window.location.href = '/#/profile';
+         
+        },function(data){
+        	// error case
+        	$scope.errorMessage = "Unable to log in: " + data;
+        	        });  
+           });
+        }
+           
     $scope.resetPassword = function(form) {
       $scope.successMessage = null;
       $scope.errorMessage = null;
