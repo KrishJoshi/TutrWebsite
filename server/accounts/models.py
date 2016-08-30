@@ -43,9 +43,12 @@ ROLE_CHOICES = (
     (u'Tutor', u'Tutor'),
     (u'Student', u'Student'),
     )
+def upload_to(instance, filename):
+    return 'user_profile_image/{}/{}'.format(instance.user_id, filename)
+
 class BaseUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(_('email address'), unique=True)
-    username = models.CharField(max_length=40, unique=True)
+    username = models.CharField(max_length=40, unique=False)
     first_name = models.CharField(_('first name'), max_length=30, blank=True)
     last_name = models.CharField(_('last name'), max_length=30, blank=True)
     gender= models.CharField(max_length=10, choices=GENDER_CHOICES, blank=True)
@@ -56,10 +59,11 @@ class BaseUser(AbstractBaseUser, PermissionsMixin):
     postcode = models.CharField(_('postcode'), max_length=30, blank=True)
     location = models.CharField(_('location'), max_length=30, blank=True)
     name_of_university = models.CharField(_('name of University'), max_length=30, blank=True)
-    availability = models.CharField(_('Availability'), max_length=30, blank=True)
+    availability_from = models.DateTimeField(_('Available From'),  default=timezone.now)
+    availability_to = models.DateTimeField(_('Available To'),  default=timezone.now)
     about = models.CharField(_('About Me'), max_length=30, blank=True)
-    role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='Student')
-    avatar = models.ImageField('profile picture', upload_to='static/media/images/avatars/', null=True, blank=True)
+    role = models.FilePathField(max_length=10, choices=ROLE_CHOICES, default='Student')
+    avatar = models.URLField(_('image'), max_length=200, default = 'http://simpleicon.com/wp-content/uploads/user-2.png')
   
     is_staff = models.BooleanField(_('staff status'), default=False,
                                    help_text=_('Designates whether the user can log into this admin '
@@ -93,3 +97,11 @@ class BaseUser(AbstractBaseUser, PermissionsMixin):
         Sends an email to this User.
         """
         send_mail(subject, message, from_email, [self.email], **kwargs)
+from django.dispatch import receiver
+from allauth.socialaccount.signals import pre_social_login
+@receiver(pre_social_login)
+def CreateProfile(sender, request, sociallogin, **kwargs):
+	"""
+	This function catches the signal for social login and print the extra information
+	"""
+	print "LOGS: Caught the signal--> Printing extra data of the acccount: \n", sociallogin.account.extra_data

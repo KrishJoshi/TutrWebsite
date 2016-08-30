@@ -1,0 +1,60 @@
+API endpoints
+    /rest-auth/login/ (POST)
+            email (string)
+            password (string)
+    /rest-auth/logout/ (POST, GET)
+            token
+
+    /rest-auth/password/reset/ (POST)
+            email
+
+    /rest-auth/password/reset/confirm/ (POST)
+            uid
+            token
+            new_password1
+            new_password2
+
+    /rest-auth/password/change/ (POST)
+
+            new_password1
+            new_password2
+            old_password
+
+    /rest-auth/user/ (GET)
+
+    /rest-auth/user/ (PUT/PATCH)
+
+            first_name
+            last_name
+            email
+
+Registration
+
+    /rest-auth/registration/ (POST)
+
+			first_name
+			last_name
+            password1
+            password2
+            email
+            role
+
+    /rest-auth/registration/verify-email/ (POST)
+
+            key
+
+Social Media Authentication
+
+    /rest-auth/facebook/ (POST)
+
+            access_token
+            code
+
+    /rest-auth/twitter/ (POST)
+
+            access_token
+
+            token_secret
+
+Subjects
+	/api/subjects/   (GET, POST, PUT, DELETE)
