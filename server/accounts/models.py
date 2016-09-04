@@ -4,7 +4,7 @@ from django.core.mail import send_mail
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
-
+from api.models import Subjects
 
 class UserManager(BaseUserManager):
     use_in_migrations = True
@@ -53,7 +53,7 @@ class BaseUser(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(_('last name'), max_length=30, blank=True)
     gender= models.CharField(max_length=10, choices=GENDER_CHOICES, blank=True)
     hourrate = models.CharField(_('Hour Rate'), max_length=30, blank=True)
-    subjects = models.CharField(_('Subjects'), max_length=30, blank=True)
+    subjects = models.ManyToManyField(Subjects,blank=True)
     education = models.CharField(_('education'), max_length=30, blank=True)
     degree = models.CharField(_('degree'), max_length=30, blank=True)
     postcode = models.CharField(_('postcode'), max_length=30, blank=True)

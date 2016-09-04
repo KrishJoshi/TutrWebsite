@@ -10,13 +10,18 @@ admin.site.site_header = ugettext_lazy('My administration')
 admin.site.index_title = ugettext_lazy('Site administration')
 from rest_framework import routers
 from api.views import *
+from core.views import UserView
 from accounts.FacebookLogin import FacebookLogin
 router = routers.SimpleRouter()
 router.register(r'subjects', SubjectsViewSet)
+
 urlpatterns = [
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^$', TemplateView.as_view(template_name='index.html')),
                        url(r'^api/', include(router.urls)),
+                       
+                       url(r'^rest-auth/api/users/$', UserView.as_view()),
+                       url(r'^rest-auth/api/users/(?P<role>.+)/$', UserView.as_view()),
                        url(r'^rest-auth/', include('rest_auth.urls')),
                        url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
                        url(r'^account/', include('allauth.urls')),
