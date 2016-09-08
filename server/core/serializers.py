@@ -16,6 +16,7 @@ class UserDetailsView(serializers.ModelSerializer):
 		instance.subjects = self.context['request'].data['subjects']
 		print instance
 		instance.save()
+		return instance
 class RegisterSerializer(serializers.Serializer):
     email = serializers.EmailField(required=allauth_settings.EMAIL_REQUIRED)
     first_name = serializers.CharField(required=True, write_only=True)
