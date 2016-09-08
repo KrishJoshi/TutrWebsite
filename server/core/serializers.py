@@ -9,7 +9,7 @@ class UserDetailsView(serializers.ModelSerializer):
     #subjects = SubjectsSerializer()
     class Meta:
         model = BaseUser
-        fields = ('email', 'first_name', 'last_name', 'gender', 'hourrate', 'subjects', 'education', 'degree', 'postcode', 'location', 'name_of_university', 'availability_from', 'availability_to', 'about', 'role', 'avatar')
+        fields = ('id', 'email', 'first_name', 'last_name', 'gender', 'hourrate', 'subjects', 'education', 'degree', 'postcode', 'location', 'name_of_university', 'availability_from', 'availability_to', 'about', 'role', 'avatar')
         depth = 1
 
 class RegisterSerializer(serializers.Serializer):

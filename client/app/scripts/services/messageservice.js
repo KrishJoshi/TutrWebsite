@@ -56,9 +56,9 @@ angular.module('tutrApp')
       QB.createSession(function (err, result) {
         if (result) {
           var params = {
-            email: parseUser.attributes.username,
+            email: parseUser.first_name,
             password: parseUser.id,
-            full_name: parseUser.attributes.firstName
+            full_name: parseUser.attributes.first_name
           };
           QB.users.create(params, function (err, result) {
             if (result) {
@@ -74,7 +74,7 @@ angular.module('tutrApp')
     var loginToChat = function (parseUser) {
       var deferred = $q.defer();
 
-      QB.createSession({email: parseUser.email, password: parseUser.id}, function (err, res) {
+      QB.createSession({email: parseUser.first_name, password: parseUser.id}, function (err, res) {
         if (res) {
           userLoggedInCallback(res, parseUser, deferred);
         } else {
@@ -149,7 +149,7 @@ angular.module('tutrApp')
     };
 
     var createNewDialog = function (withUser) {
-      var user = findBloxUser(withUser.email);
+      var user = findBloxUser(withUser.first_name);
       console.log("User Found:");
       console.log(user);
       var params = {

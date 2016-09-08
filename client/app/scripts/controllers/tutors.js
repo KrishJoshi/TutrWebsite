@@ -58,7 +58,7 @@ angular.module('tutrApp')
 
 
         if (tutor.location) {
-          if (userLocation.milesTo(tutor.attributes.location) <= options.distance) {
+          if (userLocation.milesTo(tutor.location) <= options.distance) {
             isLocationCloseBy = true;
           }
         }
