@@ -24,7 +24,7 @@ DATABASES = {
          'ENGINE': 'django.contrib.gis.db.backends.postgis',
          'NAME': 'tutrwebsite',
          'USER': 'postgres',
-         'PASSWORD': 'TutrWebsitE',
+         'PASSWORD': 'postgres',
     },
 }
 # Honor the 'Host' header
