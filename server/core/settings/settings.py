@@ -23,7 +23,8 @@ DATABASES = {
     'default': {
          'ENGINE': 'django.contrib.gis.db.backends.postgis',
          'NAME': 'tutrwebsite',
-         'USER': 'TutrWebsitE',
+         'USER': 'Postgres',
+         'PASSWORD': 'TutrWebsitE',
     },
 }
 # Honor the 'Host' header
