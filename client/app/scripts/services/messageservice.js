@@ -56,9 +56,9 @@ angular.module('tutrApp')
       QB.createSession(function (err, result) {
         if (result) {
           var params = {
-            email: "mate@mate.com",
-            password: "5122111",
-            full_name: parseUser.first_name
+            email: parseUser.first_name,
+            password: parseUser.id,
+            full_name: parseUser.attributes.first_name
           };
           QB.users.create(params, function (err, result) {
             if (result) {
@@ -150,7 +150,7 @@ angular.module('tutrApp')
     };
 
     var createNewDialog = function (withUser) {
-      var user = findBloxUser("swilliams267@smailliwaras.org");
+      var user = findBloxUser(withUser.email);
       console.log("User Found:");
       console.log(user);
       var params = {

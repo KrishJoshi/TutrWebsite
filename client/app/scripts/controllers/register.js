@@ -8,7 +8,7 @@
  * Controller of the tutrApp
  */
 angular.module('tutrApp')
-  .controller('RegisterCtrl', function ($scope, $rootScope, UserService, messageService) {
+  .controller('RegisterCtrl', function ($scope, $rootScope, UserService) {
     //$scope.selectedUserType = "Student";
     $scope.performRegister = function(form) {
       $scope.successMessage = null;
@@ -27,10 +27,7 @@ angular.module('tutrApp')
         .then(function(data){
         	// success case
         	 $scope.successMessage = "Thank you " + form.firstName + ", you have been successfully registered";
-        	$scope.complete = true;
-          messageService.loginToChat(user);
-          $rootScope.currentUser = user;
-          $rootScope.$apply();
+        
         },function(data){
         	// error case
         $scope.errorMessage = "Unable to register: " + data;
