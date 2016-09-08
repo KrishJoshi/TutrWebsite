@@ -89,6 +89,7 @@ angular.module('tutrApp')
     };
 
     var findBloxUser = function (email) {
+		console.log(listOfUsers)
       for (var i = 0; i < listOfUsers.length; i++) {
         var user = listOfUsers[i];
         if (user.email.toLowerCase() === email.toLowerCase()) {
