@@ -11,8 +11,8 @@ class UserDetailsView(serializers.ModelSerializer):
         model = BaseUser
         fields = ('id', 'email', 'first_name', 'last_name', 'gender', 'hourrate', 'subjects', 'education', 'degree', 'postcode', 'location', 'name_of_university', 'availability_from', 'availability_to', 'about', 'role', 'avatar')
     def update(self, instance, validated_data):
-        instance.subjects = self.context['request'].data['subjects']
-        print instance.subjects
+        subjects = self.context['request'].data['subjects']
+        print subjects
         return instance
     
 class RegisterSerializer(serializers.Serializer):
