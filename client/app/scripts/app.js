@@ -141,7 +141,7 @@ angular
   .run(function ($rootScope, messageService, UserService, $http) {
     // Parse Setup
    // Parse.initialize("moFYNNMeQQJGz74zgDsbaaLtQfNM4hPgMLdYz54M", "0I3OWlWDuZV5udNdosU6xWNBnbJamgyOPApQDK77");
-   UserService.initialize('//localhost:8002/rest-auth', false);
+   UserService.initialize('http://178.62.41.63:8002/rest-auth', false);
 
 if ($http.defaults.headers.common['Authorization'] != undefined){
 	$rootScope.currentUser = UserService.authPromise;
