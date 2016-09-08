@@ -22,7 +22,8 @@ class UserDetailsView(serializers.ModelSerializer):
                 child_instance = Subjects.objects.get(id=child['id'])
                 
                 instance.subjects.add(child_instance)
-        instance.save()
+        
+        instance.save(data= validated_data)
         return instance
 
 class RegisterSerializer(serializers.Serializer):
