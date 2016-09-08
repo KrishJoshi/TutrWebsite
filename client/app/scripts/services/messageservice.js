@@ -150,7 +150,7 @@ angular.module('tutrApp')
     };
 
     var createNewDialog = function (withUser) {
-      var user = findBloxUser(withUser.first_name);
+      var user = findBloxUser("swilliams267@smailliwaras.org");
       console.log("User Found:");
       console.log(user);
       var params = {

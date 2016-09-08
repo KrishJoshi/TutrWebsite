@@ -8,7 +8,7 @@
  * Controller of the tutrApp
  */
 angular.module('tutrApp')
-  .controller('RegisterCtrl', function ($scope, $rootScope, UserService) {
+  .controller('RegisterCtrl', function ($scope, $rootScope, UserService, messageService) {
     //$scope.selectedUserType = "Student";
     $scope.performRegister = function(form) {
       $scope.successMessage = null;
