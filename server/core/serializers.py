@@ -13,9 +13,9 @@ class UserDetailsView(serializers.ModelSerializer):
 
 	def update(self, instance, validated_data):
 		
-		instance.subjects = self.context['request'].data['subjects']
+		#instance.subjects = self.context['request'].data['subjects']
 		print instance
-		instance.save()
+		#instance.save()
 		return instance
 class RegisterSerializer(serializers.Serializer):
     email = serializers.EmailField(required=allauth_settings.EMAIL_REQUIRED)
