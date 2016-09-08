@@ -8,10 +8,11 @@ from accounts.models import BaseUser
 from api.models import Subjects
 from api.serializers import SubjectsSerializer
 class UserDetailsView(serializers.ModelSerializer):
-    subjects = SubjectsSerializer(many=True)
+    #subjects = SubjectsSerializer(many=True)
     class Meta:
         model = BaseUser
         fields = ('id', 'email', 'first_name', 'last_name', 'gender', 'hourrate', 'subjects', 'education', 'degree', 'postcode', 'location', 'name_of_university', 'availability_from', 'availability_to', 'about', 'role', 'avatar')
+        depth = 1
     def update(self, instance, validated_data):
         submitted_subjects = self.context['request'].data['subjects']
         if submitted_subjects:
