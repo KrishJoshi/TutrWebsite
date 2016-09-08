@@ -4,13 +4,22 @@ from allauth.account.adapter import get_adapter
 from allauth.account.utils import setup_user_email
 from rest_framework import serializers
 from accounts.models import BaseUser
+
+from api.models import Subjects
 from api.serializers import SubjectsSerializer
 class UserDetailsView(serializers.ModelSerializer):
     subjects = SubjectsSerializer(many=True)
     class Meta:
         model = BaseUser
         fields = ('id', 'email', 'first_name', 'last_name', 'gender', 'hourrate', 'subjects', 'education', 'degree', 'postcode', 'location', 'name_of_university', 'availability_from', 'availability_to', 'about', 'role', 'avatar')
-
+    def update(self, instance, validated_data):
+        submitted_subjects = self.context['request'].data['subjects'])
+        if submitted_subjects:
+            for child in submitted_subjects:
+                child_instance = Subjects.objects.get(id=child.id)
+                instance.subjects.add(child_instance)
+        instance.save()
+        return instance
 
 class RegisterSerializer(serializers.Serializer):
     email = serializers.EmailField(required=allauth_settings.EMAIL_REQUIRED)
