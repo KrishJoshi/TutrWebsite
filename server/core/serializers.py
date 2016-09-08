@@ -6,15 +6,13 @@ from rest_framework import serializers
 from accounts.models import BaseUser
 from api.serializers import SubjectsSerializer
 class UserDetailsView(serializers.ModelSerializer):
-    subjects = SubjectsSerializer(many=True, read_only=True)
+    subjects = SubjectsSerializer(many=True, read_only=False)
     class Meta:
         model = BaseUser
         fields = ('id', 'email', 'first_name', 'last_name', 'gender', 'hourrate', 'subjects', 'education', 'degree', 'postcode', 'location', 'name_of_university', 'availability_from', 'availability_to', 'about', 'role', 'avatar')
-    def update(self, instance, validated_data):
-        instance.save(subjects = self.context['request'].data['subjects'])
-        print instance
-        return instance
-    
+
+	def update(self, instance, validated_data):
+		print instance.subjects
 class RegisterSerializer(serializers.Serializer):
     email = serializers.EmailField(required=allauth_settings.EMAIL_REQUIRED)
     first_name = serializers.CharField(required=True, write_only=True)
