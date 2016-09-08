@@ -16,10 +16,11 @@ class UserDetailsView(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         submitted_subjects = self.context['request'].data['subjects']
         if submitted_subjects:
+            instance.subjects = []
             for child in submitted_subjects:
                 print child
                 child_instance = Subjects.objects.get(id=child['id'])
-                instance.subjects = []
+                
                 instance.subjects.add(child_instance)
         instance.save()
         return instance
