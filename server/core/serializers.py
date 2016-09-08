@@ -13,7 +13,7 @@ class UserDetailsView(serializers.ModelSerializer):
         model = BaseUser
         fields = ('id', 'email', 'first_name', 'last_name', 'gender', 'hourrate', 'subjects', 'education', 'degree', 'postcode', 'location', 'name_of_university', 'availability_from', 'availability_to', 'about', 'role', 'avatar')
     def update(self, instance, validated_data):
-        submitted_subjects = self.context['request'].data['subjects'])
+        submitted_subjects = self.context['request'].data['subjects']
         if submitted_subjects:
             for child in submitted_subjects:
                 child_instance = Subjects.objects.get(id=child.id)
