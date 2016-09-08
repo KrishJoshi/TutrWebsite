@@ -16,6 +16,9 @@ angular.module('tutrApp')
         .then(function(data){
         	// success case
 				$rootScope.currentUser = UserService.authPromise;
+				
+          messageService.loginToChat(UserService.authPromise);
+
 				$rootScope.$apply();
 				$rootScope.loginToChat();
 				$window.location.href = '/#/profile';
