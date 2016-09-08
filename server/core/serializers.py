@@ -10,7 +10,7 @@ class UserDetailsView(serializers.ModelSerializer):
     class Meta:
         model = BaseUser
         fields = ('id', 'email', 'first_name', 'last_name', 'gender', 'hourrate', 'subjects', 'education', 'degree', 'postcode', 'location', 'name_of_university', 'availability_from', 'availability_to', 'about', 'role', 'avatar')
-        depth = 1
+
     def save(self):
         subjects = self.validated_data['subjects']
         print subjects
