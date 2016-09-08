@@ -11,8 +11,8 @@ class UserDetailsView(serializers.ModelSerializer):
         model = BaseUser
         fields = ('id', 'email', 'first_name', 'last_name', 'gender', 'hourrate', 'subjects', 'education', 'degree', 'postcode', 'location', 'name_of_university', 'availability_from', 'availability_to', 'about', 'role', 'avatar')
 
-	def update(self, instance, validated_data):
-		print instance.subjects
+	def save(self):
+		print self.subjects
 class RegisterSerializer(serializers.Serializer):
     email = serializers.EmailField(required=allauth_settings.EMAIL_REQUIRED)
     first_name = serializers.CharField(required=True, write_only=True)
