@@ -17,6 +17,7 @@ class UserDetailsView(serializers.ModelSerializer):
         submitted_subjects = self.context['request'].data['subjects']
         if submitted_subjects:
             for child in submitted_subjects:
+                print child
                 child_instance = Subjects.objects.get(id=child.id)
                 instance.subjects.add(child_instance)
         instance.save()
