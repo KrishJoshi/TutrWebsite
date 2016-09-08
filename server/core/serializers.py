@@ -4,12 +4,14 @@ from allauth.account.adapter import get_adapter
 from allauth.account.utils import setup_user_email
 from rest_framework import serializers
 from accounts.models import BaseUser
-
+from api.serializers import SubjectsSerializer
 class UserDetailsView(serializers.ModelSerializer):
+    #subjects = SubjectsSerializer()
     class Meta:
         model = BaseUser
         fields = ('email', 'first_name', 'last_name', 'gender', 'hourrate', 'subjects', 'education', 'degree', 'postcode', 'location', 'name_of_university', 'availability_from', 'availability_to', 'about', 'role', 'avatar')
         depth = 1
+
 class RegisterSerializer(serializers.Serializer):
     email = serializers.EmailField(required=allauth_settings.EMAIL_REQUIRED)
     first_name = serializers.CharField(required=True, write_only=True)

@@ -13,7 +13,7 @@
 
           <div class="col-md-12">
             <input type="text" ng-model="refineOptions.subject" name="Subject" placeholder="Subject"
-                   typeahead="subject.attributes.name for subject in subjects | filter:$viewValue"
+                   typeahead="subject.name for subject in subjects | filter:$viewValue"
                    typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control">
             <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
 
@@ -82,30 +82,30 @@
       <li ng-repeat="(key,tutor) in tutors">
         <div class="row panel">
           <div class="col-md-2 ">
-            <img ng-show="tutor.attributes.picture" ng-src="{{currentUser.attributes.picture}}" class="img-thumbnail" alt="avatar">
-            <img ng-hide="tutor.attributes.picture" src="http://simpleicon.com/wp-content/uploads/user-2.png" class="img-thumbnail">
+            <img src="{{tutor.avatar}}" class="img-thumbnail" alt="avatar">
+            <img ng-hide="tutor.avatar" src="http://simpleicon.com/wp-content/uploads/user-2.png" class="img-thumbnail">
 
           </div>
           <div class="col-md-9  col-xs-12">
             <div class="header">
               <h1>
                <div ng-if="currentUser">
-                <a ng-href="#/tutor/{{key}}"> {{tutor.attributes.firstName}} </a>
+                <a ng-href="#/tutor/{{key}}"> {{tutor.first_name}} </a>
                </div>
                 <div ng-if="!currentUser">
-                  <a ng-click="tutorClicked()" href=""> {{tutor.attributes.firstName}} </a>
+                  <a ng-click="tutorClicked()" href=""> {{tutor.first_name}} </a>
                 </div>
               </h1>
-              <rating ng-model="tutor.attributes.rating" max="5" readonly="true" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" ></rating>
+              <rating ng-model="tutor.rating" max="5" readonly="true" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" ></rating>
 
               <h4>
                 <ul class="list-single-line subjects">
-                  <li ng-repeat="subject in tutor.attributes.subjects" class="list-item thick-pad">
-                    {{subject.attributes.name}}
+                  <li ng-repeat="subject in tutor.subjects" class="list-item thick-pad">
+                    {{subject.name}}
                   </li>
                 </ul>
               </h4>
-              <span class="clearfix">{{tutor.attributes.aboutMe}}</span>
+              <span class="clearfix">{{tutor.about}}</span>
             </div>
           </div>
         </div>

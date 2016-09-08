@@ -5,5 +5,4 @@ class SubjectsSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Subjects
 		fields = ('id', 'name', 'createdAt', 'updatedAt')
-		depth = 1
 		

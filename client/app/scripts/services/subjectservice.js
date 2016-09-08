@@ -33,7 +33,7 @@ angular.module('tutrApp')
 
     var getSubjectById = function (subjectId) {
           
-      return "here3";
+     	 return $http.get("/api/subjects/"+subjectId+'/');
     };
 
     var addNewSubject = function (subjectName) {

@@ -24,9 +24,6 @@ angular.module('tutrApp')
 
     var tutorsNearMe = [];
 
-
-
-
     var getAllTutors = function () {
       var deferred = $q.defer();
 
@@ -97,6 +94,9 @@ angular.module('tutrApp')
 
       return deferred.promise;
     };
+
+console.log(tutorCache)
+
 
     // Public API here
     return {

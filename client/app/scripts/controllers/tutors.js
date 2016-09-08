@@ -29,11 +29,12 @@ angular.module('tutrApp')
     var subjectFilter = function (tutor) {
       if (options.subject) {
         var subjectFound = false;
-        var subjects = tutor.attributes.subjects;
+        var subjects = tutor.subjects;
+        console.log(subjects)
         if (subjects) {
           for (var j = 0; j < subjects.length; j++) {
             var subject = subjects[j];
-            if (subject.attributes.name === options.subject) {
+            if (subject.name === options.subject) {
               subjectFound = true;
               break;
             }
@@ -45,17 +46,18 @@ angular.module('tutrApp')
       }
     };
 
-    var distanceFilter = function (tutor) {
+   var distanceFilter = function (tutor) {
       if (options.distance) {
         var isLocationCloseBy = false;
-        var userLocation = new Parse.GeoPoint({latitude: 0, longitude: 0});
-
+        var userLocationlat = ""
+		var userLocationlon = ""
         navigator.geolocation.getCurrentPosition(function (position) {
-          userLocation = new Parse.GeoPoint({latitude: position.coords.latitude, longitude: position.coords.longitude});
+          userLocationlat = position.coords.latitude;
+           userLocationlon = position.coords.longitude;
         });
 
 
-        if (tutor.attributes.location) {
+        if (tutor.location) {
           if (userLocation.milesTo(tutor.attributes.location) <= options.distance) {
             isLocationCloseBy = true;
           }
@@ -71,8 +73,8 @@ angular.module('tutrApp')
       if (options.time.min !== 0 && options.time.max !== 24) {
         var withinTime = false;
 
-        if (tutor.attributes.availability) {
-          var timing = tutor.attributes.availability.split("-");
+        if (tutor.availability) {
+          var timing = tutor.availability.split("-");
           timing.min = parseInt(timing[0]);
           timing.max = parseInt(timing[1]);
 
@@ -89,7 +91,7 @@ angular.module('tutrApp')
     var rateFilter = function (tutor) {
       if (options.rate) {
         var isRateLower = false;
-        if (tutor.attributes.hourlyRate <= options.rate) {
+        if (tutor.hourlyRate <= options.rate) {
           isRateLower = true;
         }
         return isRateLower;
@@ -100,7 +102,12 @@ angular.module('tutrApp')
 
     var filter = function (tutor) {
       var passesAllTests = false;
+      console.log(subjectFilter(tutor))
+        console.log(distanceFilter(tutor))
+        console.log(timeFilter(tutor))
+        console.log(rateFilter(tutor))
       if (subjectFilter(tutor) && distanceFilter(tutor) && timeFilter(tutor) && rateFilter(tutor)) {
+        
         passesAllTests = true;
       }
       return passesAllTests;
@@ -122,7 +129,7 @@ angular.module('tutrApp')
 
 
     subjectService.getAllSubjects().then(function (result) {
-      $scope.subjects = result;
+      $scope.subjects = result.data;
     });
 
     if($routeParams.subject) {

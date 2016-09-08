@@ -10,7 +10,7 @@
       </div>
       <div class="col-md-6 no-pad">
         <div class="user-pad">
-          <h3>{{tutor.attributes.firstName}} {{tutor.attributes.lastName}}</h3>
+          <h3>{{tutor.firstName}} {{tutor.lastName}}</h3>
           <h4 class="white"><i class="fa fa-check-circle-o"></i> Facebook verified</h4>
           <h4 class="white"><i class="fa fa-check-circle-o"></i> CRB verified</h4>
           <h4 class="white"><i class="fa fa-check-circle-o"></i> Qualifications verified</h4>
@@ -41,8 +41,8 @@
 <div class="row margin-top-thick">
   <div class="col-md-12">
     <b>Subjects:</b>
-    <ul class="list-single-line subjects" ng-repeat="subject in tutor.attributes.subjects">
-      <li class="list-item">{{subject.attributes.name}}</li>
+    <ul class="list-single-line subjects" ng-repeat="subject in tutor.subjects">
+      <li class="list-item">{{subject.name}}</li>
     </ul>
   </div>
 </div>
@@ -51,7 +51,7 @@
   <div class="col-md-12">
     <b>About me:</b>
 
-    <p>{{tutor.attributes.aboutMe}}</p>
+    <p>{{tutor.about}}</p>
   </div>
 </div>
 

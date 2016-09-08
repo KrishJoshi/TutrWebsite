@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.core.mail import send_mail
-from django.db import models
+from django.contrib.gis.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from api.models import Subjects
@@ -57,7 +57,7 @@ class BaseUser(AbstractBaseUser, PermissionsMixin):
     education = models.CharField(_('education'), max_length=30, blank=True)
     degree = models.CharField(_('degree'), max_length=30, blank=True)
     postcode = models.CharField(_('postcode'), max_length=30, blank=True)
-    location = models.CharField(_('location'), max_length=30, blank=True)
+    location = models.PointField(null=True, blank=True)
     name_of_university = models.CharField(_('name of University'), max_length=30, blank=True)
     availability_from = models.DateTimeField(_('Available From'),  default=timezone.now)
     availability_to = models.DateTimeField(_('Available To'),  default=timezone.now)

@@ -21,9 +21,10 @@ DEBUG = True #bool_value(os.environ.get('DJANGO_DEBUG'))
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(SETTINGS_DIR, 'db.sqlite3'),
-    }
+         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+         'NAME': 'tutrwebsite',
+         'USER': 'TutrWebsitE',
+    },
 }
 # Honor the 'Host' header
 ALLOWED_HOSTS = ['*']
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
     'django_extensions',
     'rest_framework',
     'accounts',

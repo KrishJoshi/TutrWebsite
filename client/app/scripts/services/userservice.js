@@ -65,7 +65,7 @@ angular.module('tutrApp')
             return deferred.promise;
         },
         'register': function(email,password,firstName,lastName){
-			console.log($rootScope.currentUserType);
+			//console.log($rootScope.currentUserType);
             var data = {
                 'email':email,
                 'password1':password,
@@ -111,7 +111,7 @@ angular.module('tutrApp')
                     'code':code
                 }
             }).then(function(data){
-				console.log(data);
+				//console.log(data);
                 if(!djangoAuth.use_session){
                     $http.defaults.headers.common['Authorization'] = 'Token ' + data.key;
                     $cookies.token = data.key;
@@ -132,6 +132,12 @@ angular.module('tutrApp')
                 djangoAuth.authenticated = false;
                 $rootScope.$broadcast("djangoAuth.logged_out");
             });
+        },
+         'getUsersByRole': function(role){
+            return this.request({
+                'method': "GET",
+                'url': "/api/users/"+ role + '/'
+            }); 
         },
         'changePassword': function(password1,password2){
             return this.request({
@@ -159,6 +165,7 @@ angular.module('tutrApp')
             }); 
         },
         'updateProfile': function(data){
+			console.log(data)
             return this.request({
                 'method': "PATCH",
                 'url': "/user/",
