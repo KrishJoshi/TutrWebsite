@@ -22,8 +22,21 @@ class UserDetailsView(serializers.ModelSerializer):
                 child_instance = Subjects.objects.get(id=child['id'])
                 
                 instance.subjects.add(child_instance)
-        
-        instance.save(data= validated_data)
+        instance.first_name = validated_data.get('first_name', instance.first_name)
+        instance.last_name = validated_data.get('last_name', instance.last_name)
+        instance.gender = validated_data.get('gender', instance.gender)
+        instance.hourrate = validated_data.get('hourrate', instance.hourrate)
+        instance.education = validated_data.get('education', instance.education)
+        instance.degree = validated_data.get('degree', instance.degree)
+        instance.postcode = validated_data.get('postcode', instance.postcode)
+        instance.location = validated_data.get('location', instance.location)
+        instance.name_of_university = validated_data.get('name_of_university', instance.name_of_university)
+        instance.availability_from = validated_data.get('availability_from', instance.availability_from)
+        instance.availability_to = validated_data.get('availability_to', instance.availability_to)
+        instance.about = validated_data.get('about', instance.about)
+        instance.role = validated_data.get('role', instance.role)
+        instance.avatar = validated_data.get('avatar', instance.avatar)
+        instance.save()
         return instance
 
 class RegisterSerializer(serializers.Serializer):
