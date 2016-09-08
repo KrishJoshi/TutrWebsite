@@ -177,7 +177,7 @@ if ($http.defaults.headers.common['Authorization'] != undefined){
         $rootScope.currentUserType = userTypeForServer.attributes.name;
       });*/
     };
-
+console.log($rootScope.loginToChat)
     if ($rootScope.currentUser) {
       $rootScope.loginToChat();
     }

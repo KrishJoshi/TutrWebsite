@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tutrApp')
-  .service('UserService', function UserService($q, $http, $cookies, $rootScope, messageService) {
+  .service('UserService', function UserService($q, $http, $cookies, $rootScope) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     var service = {
         /* START CUSTOMIZATION HERE */
@@ -80,11 +80,7 @@ angular.module('tutrApp')
                 'method': "POST",
                 'url': "/registration/",
                 'data' :data
-            }).then(function(data){
-		  console.log(data)//messageService.loginToChat(user);
-          //$rootScope.currentUser = user;
-          //$rootScope.$apply();
-          });
+            });
         },
         'signIn': function(email, password){
             var djangoAuth = this;
