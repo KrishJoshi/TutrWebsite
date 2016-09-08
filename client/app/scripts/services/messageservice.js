@@ -56,9 +56,9 @@ angular.module('tutrApp')
       QB.createSession(function (err, result) {
         if (result) {
           var params = {
-            email: parseUser.first_name,
+            email: parseUser.email,
             password: parseUser.id,
-            full_name: parseUser.attributes.first_name
+            full_name: parseUser.first_name
           };
           QB.users.create(params, function (err, result) {
             if (result) {

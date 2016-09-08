@@ -6,7 +6,7 @@ from rest_framework import serializers
 from accounts.models import BaseUser
 from api.serializers import SubjectsSerializer
 class UserDetailsView(serializers.ModelSerializer):
-    #subjects = SubjectsSerializer()
+    subjects = SubjectsSerializer(read_only=False)
     class Meta:
         model = BaseUser
         fields = ('id', 'email', 'first_name', 'last_name', 'gender', 'hourrate', 'subjects', 'education', 'degree', 'postcode', 'location', 'name_of_university', 'availability_from', 'availability_to', 'about', 'role', 'avatar')
