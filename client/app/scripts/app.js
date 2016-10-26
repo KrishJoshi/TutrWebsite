@@ -141,7 +141,7 @@ angular
   .run(function ($rootScope, messageService, UserService, $http) {
     // Parse Setup
    // Parse.initialize("moFYNNMeQQJGz74zgDsbaaLtQfNM4hPgMLdYz54M", "0I3OWlWDuZV5udNdosU6xWNBnbJamgyOPApQDK77");
-   UserService.initialize('http://178.62.41.63:8002/rest-auth', false);
+   UserService.initialize('http://138.68.156.168:8000/rest-auth', false);
 
 //console.log( $http.defaults.headers.common['Authorization'])
 

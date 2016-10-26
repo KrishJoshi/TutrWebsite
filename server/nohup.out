@@ -1,0 +1,331 @@
+[25/Sep/2016 14:03:26] "GET / HTTP/1.1" 200 10183
+[25/Sep/2016 14:03:27] "GET /static/bower_components/jquery/dist/jquery.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:28] "GET /static/bower_components/underscore/underscore.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:28] "GET /static/bower_components/bootstrap/dist/js/bootstrap.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:28] "GET /static/bower_components/angular/angular.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:28] "GET /static/bower_components/angular/angular-route.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:29] "GET /static/bower_components/angular-growl.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:29] "GET /static/bower_components/angular/angular-cookies.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:29] "GET /static/bower_components/angular/angular-sanitize.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:29] "GET /static/bower_components/angular/ui-bootstrap.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:29] "GET /static/bower_components/angular.rangeSlider.css HTTP/1.1" 304 0
+[25/Sep/2016 14:03:29] "GET /static/scripts/controllers/messages.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:30] "GET /static/bower_components/animate.min.css HTTP/1.1" 304 0
+[25/Sep/2016 14:03:30] "GET /static/bower_components/ngDialog/js/ngDialog.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:30] "GET /static/bower_components/angular/angular-animate.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:30] "GET /static/scripts/controllers/about.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:30] "GET /static/bower_components/image-upload.css HTTP/1.1" 304 0
+[25/Sep/2016 14:03:30] "GET /static/bower_components/font-awesome.css HTTP/1.1" 304 0
+[25/Sep/2016 14:03:30] "GET /static/scripts/controllers/profile.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:30] "GET /static/bower_components/ngprogress.min.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:30] "GET /static/bower_components/angular-touch.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:30] "GET /static/scripts/controllers/register.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:30] "GET /static/bower_components/ng-tags-input.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:30] "GET /static/scripts/controllers/login.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:30] "GET /static/bower_components/ng-imgur.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:30] "GET /static/bower_components/angular/angular-resource.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:30] "GET /static/bower_components/bootstrap.css HTTP/1.1" 304 0
+[25/Sep/2016 14:03:31] "GET /static/scripts/controllers/main.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:31] "GET /static/scripts/controllers/tutors.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:31] "GET /static/scripts/filters/qbloxuserById.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:31] "GET /static/bower_components/chat/style.css HTTP/1.1" 304 0
+[25/Sep/2016 14:03:31] "GET /static/scripts/services/messageservice.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:31] "GET /static/scripts/controllers/dialog.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:31] "GET /static/bower_components/image-upload.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:32] "GET /static/bower_components/imgur.css HTTP/1.1" 304 0
+[25/Sep/2016 14:03:32] "GET /static/bower_components/angular-moment.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:32] "GET /static/scripts/directives/image.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:32] "GET /static/scripts/services/userservice.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:32] "GET /static/bower_components/angular-growl.min.css HTTP/1.1" 304 0
+[25/Sep/2016 14:03:32] "GET /static/scripts/directives/Drop.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:32] "GET /static/scripts/services/FacebookService.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:32] "GET /static/scripts/app.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:32] "GET /static/scripts/controllers/tutor.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:32] "GET /static/scripts/services/tutorservice.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:32] "GET /static/bower_components/chat/index.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:32] "GET /static/bower_components/angular.rangeSlider.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:33] "GET /static/bower_components/ng-tags-input.css HTTP/1.1" 304 0
+[25/Sep/2016 14:03:33] "GET /static/scripts/services/subjectservice.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:33] "GET /static/bower_components/angular/angular-cache.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:33] "GET /static/bower_components/angular.rangeSlider.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:33] "GET /static/bower_components/image-upload.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:34] "GET /static/bower_components/ngprogress.min.js HTTP/1.1" 304 0
+[25/Sep/2016 14:03:34] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 0
+[25/Sep/2016 14:03:34] "GET /static/views/tutors.html HTTP/1.1" 200 4273
+[25/Sep/2016 14:03:34] "GET /rest-auth/user/ HTTP/1.1" 200 589
+[25/Sep/2016 14:03:35] "GET /%7B%7Btutor.avatar%7D%7D HTTP/1.1" 404 3042
+[25/Sep/2016 14:03:35] "GET /template/rating/rating.html HTTP/1.1" 404 3067
+[25/Sep/2016 14:03:35] "GET /api/subjects/ HTTP/1.1" 200 437
+[25/Sep/2016 14:03:35] "GET /template/typeahead/typeahead-popup.html HTTP/1.1" 404 3103
+[25/Sep/2016 14:03:35] "GET /rest-auth/api/users/Tutor/ HTTP/1.1" 200 982
+[26/Sep/2016 03:36:04] "POST / HTTP/1.0" 403 2629
+[28/Sep/2016 09:04:10] code 400, message Bad request syntax ('\x16\x03\x01\x02\x00\x01\x00\x01\xfc\x03\x03\xc0\x17\xaeye\xca\xfaT\x03\xed\x9d\x16F\xd7\x1c\xf0$\xe2=\x9cW8\x97\x8d\xf41e\x97\xad\x11\xeb\x1c\x00\x00p\xc00\xc0,\xc02\xc0.\xc0/\xc0+\xc01\xc0-\x00\xa3\x00\x9f\x00\xa2\x00\x9e\xc0(\xc0$\xc0\x14\xc0')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+[30/Sep/2016 00:16:16] "GET / HTTP/1.1" 200 10183
+[30/Sep/2016 01:49:44] "GET / HTTP/1.1" 200 10183
+[30/Sep/2016 19:53:05] code 400, message Bad request syntax ('\x16\x03\x01\x02\x00\x01\x00\x01\xfc\x03\x03\xca\xabgU\x13W\xdb\x15\x87\x87\xcb1')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+[01/Oct/2016 14:25:08] "GET / HTTP/1.1" 200 10183
+[01/Oct/2016 14:25:09] "GET /static/bower_components/angular/angular-route.js HTTP/1.1" 200 35355
+[01/Oct/2016 14:25:09] "GET /static/bower_components/angular-growl.js HTTP/1.1" 200 6072
+[01/Oct/2016 14:25:09] "GET /static/bower_components/angular/angular-cookies.js HTTP/1.1" 200 5823
+[01/Oct/2016 14:25:09] "GET /static/bower_components/angular/angular-sanitize.js HTTP/1.1" 200 21793
+[01/Oct/2016 14:25:09] "GET /static/bower_components/angular.rangeSlider.css HTTP/1.1" 200 12544
+[01/Oct/2016 14:25:10] "GET /static/bower_components/underscore/underscore.js HTTP/1.1" 200 47559
+[01/Oct/2016 14:25:10] "GET /static/bower_components/bootstrap/dist/js/bootstrap.js HTTP/1.1" 200 68954
+[01/Oct/2016 14:25:12] "GET /static/bower_components/jquery/dist/jquery.js HTTP/1.1" 200 247597
+[01/Oct/2016 14:25:12] "GET /static/bower_components/animate.min.css HTTP/1.1" 200 52789
+[01/Oct/2016 14:25:13] "GET /static/bower_components/font-awesome.css HTTP/1.1" 200 35134
+[01/Oct/2016 14:25:13] "GET /static/bower_components/image-upload.css HTTP/1.1" 200 4777
+[01/Oct/2016 14:25:13] "GET /static/bower_components/ng-tags-input.css HTTP/1.1" 200 4137
+[01/Oct/2016 14:25:13] "GET /static/bower_components/chat/style.css HTTP/1.1" 200 2903
+[01/Oct/2016 14:25:14] "GET /static/bower_components/angular/ui-bootstrap.js HTTP/1.1" 200 164832
+[01/Oct/2016 14:25:14] "GET /static/bower_components/angular-growl.min.css HTTP/1.1" 200 507
+[01/Oct/2016 14:25:14] "GET /static/bower_components/ngDialog/js/ngDialog.js HTTP/1.1" 200 14652
+[01/Oct/2016 14:25:14] "GET /static/bower_components/angular.rangeSlider.js HTTP/1.1" 200 31058
+[01/Oct/2016 14:25:14] "GET /static/bower_components/chat/index.js HTTP/1.1" 200 3496
+[01/Oct/2016 14:25:14] "GET /static/bower_components/ngprogress.min.js HTTP/1.1" 200 3856
+[01/Oct/2016 14:25:15] "GET /static/bower_components/image-upload.js HTTP/1.1" 200 46610
+[01/Oct/2016 14:25:15] "GET /static/bower_components/angular-touch.js HTTP/1.1" 200 22877
+[01/Oct/2016 14:25:15] "GET /static/bower_components/angular/angular-resource.js HTTP/1.1" 200 26791
+[01/Oct/2016 14:25:15] "GET /static/bower_components/angular/angular-cache.js HTTP/1.1" 200 38153
+[01/Oct/2016 14:25:15] "GET /static/bower_components/angular-moment.js HTTP/1.1" 200 19478
+[01/Oct/2016 14:25:15] "GET /static/bower_components/ng-imgur.js HTTP/1.1" 200 3855
+[01/Oct/2016 14:25:15] "GET /static/scripts/app.js HTTP/1.1" 200 5889
+[01/Oct/2016 14:25:16] "GET /static/bower_components/ng-tags-input.js HTTP/1.1" 200 47693
+[01/Oct/2016 14:25:16] "GET /static/bower_components/angular/angular-animate.js HTTP/1.1" 200 102635
+[01/Oct/2016 14:25:16] "GET /static/scripts/directives/Drop.js HTTP/1.1" 200 2432
+[01/Oct/2016 14:25:16] "GET /static/scripts/directives/image.js HTTP/1.1" 200 4046
+[01/Oct/2016 14:25:16] "GET /static/scripts/filters/qbloxuserById.js HTTP/1.1" 200 474
+[01/Oct/2016 14:25:16] "GET /static/scripts/services/FacebookService.js HTTP/1.1" 200 1310
+[01/Oct/2016 14:25:17] "GET /static/scripts/services/messageservice.js HTTP/1.1" 200 6176
+[01/Oct/2016 14:25:17] "GET /static/scripts/services/subjectservice.js HTTP/1.1" 200 1292
+[01/Oct/2016 14:25:17] "GET /static/scripts/services/tutorservice.js HTTP/1.1" 200 2722
+[01/Oct/2016 14:25:17] "GET /static/scripts/services/userservice.js HTTP/1.1" 200 8980
+[01/Oct/2016 14:25:17] "GET /static/scripts/controllers/dialog.js HTTP/1.1" 200 1798
+[01/Oct/2016 14:25:17] "GET /static/scripts/controllers/about.js HTTP/1.1" 200 307
+[01/Oct/2016 14:25:17] "GET /static/scripts/controllers/login.js HTTP/1.1" 200 2315
+[01/Oct/2016 14:25:17] "GET /static/scripts/controllers/main.js HTTP/1.1" 200 714
+[01/Oct/2016 14:25:18] "GET /static/scripts/controllers/messages.js HTTP/1.1" 200 294
+[01/Oct/2016 14:25:18] "GET /static/scripts/controllers/profile.js HTTP/1.1" 200 4844
+[01/Oct/2016 14:25:18] "GET /static/scripts/controllers/register.js HTTP/1.1" 200 1154
+[01/Oct/2016 14:25:18] "GET /static/scripts/controllers/tutor.js HTTP/1.1" 200 544
+[01/Oct/2016 14:25:18] "GET /static/scripts/controllers/tutors.js HTTP/1.1" 200 3620
+[01/Oct/2016 14:25:18] "GET /static/bower_components/imgur.css HTTP/1.1" 200 611
+[01/Oct/2016 14:25:18] "GET /static/bower_components/angular/angular.js HTTP/1.1" 200 925789
+[01/Oct/2016 14:25:20] "GET /static/assets/icons/android-icons/icon-hires.png HTTP/1.1" 404 1842
+[01/Oct/2016 14:25:20] "GET /static/bower_components/bootstrap.css HTTP/1.1" 200 151942
+[01/Oct/2016 14:25:20] "GET /static/assets/icons/android-icons/icon-normal.png HTTP/1.1" 404 1845
+[01/Oct/2016 14:25:22] "GET /rest-auth/user/ HTTP/1.1" 200 589
+[01/Oct/2016 14:25:22] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028
+[01/Oct/2016 14:25:22] "GET /static/views/main.html HTTP/1.1" 200 1657
+[01/Oct/2016 14:25:23] "GET /template/typeahead/typeahead-popup.html HTTP/1.1" 404 3103
+[01/Oct/2016 14:25:23] "GET /api/subjects/ HTTP/1.1" 200 437
+[01/Oct/2016 14:25:24] "GET /static/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 71896
+[01/Oct/2016 14:25:25] "GET /favicon.ico HTTP/1.1" 404 3019
+[01/Oct/2016 14:25:25] "GET /favicon.ico HTTP/1.1" 404 3019
+[01/Oct/2016 14:28:49] "GET /sd HTTP/1.1" 404 2992
+[01/Oct/2016 14:29:00] "GET /api HTTP/1.1" 404 2995
+[01/Oct/2016 14:29:09] "GET /api/ HTTP/1.1" 404 3286
+[01/Oct/2016 14:29:17] "GET / HTTP/1.1" 200 10183
+[01/Oct/2016 14:29:17] "GET /static/bower_components/underscore/underscore.js HTTP/1.1" 200 47559
+[01/Oct/2016 14:29:17] "GET /static/bower_components/bootstrap/dist/js/bootstrap.js HTTP/1.1" 200 68954
+[01/Oct/2016 14:29:17] "GET /static/bower_components/angular/angular-route.js HTTP/1.1" 200 35355
+[01/Oct/2016 14:29:17] "GET /static/bower_components/angular-growl.js HTTP/1.1" 200 6072
+[01/Oct/2016 14:29:17] "GET /static/bower_components/jquery/dist/jquery.js HTTP/1.1" 200 247597
+[01/Oct/2016 14:29:17] "GET /static/bower_components/angular/angular-cookies.js HTTP/1.1" 200 5823
+[01/Oct/2016 14:29:17] "GET /static/bower_components/angular/angular-sanitize.js HTTP/1.1" 200 21793
+[01/Oct/2016 14:29:17] "GET /static/bower_components/angular/angular.js HTTP/1.1" 200 925789
+[01/Oct/2016 14:29:17] "GET /static/bower_components/angular/ui-bootstrap.js HTTP/1.1" 200 164832
+[01/Oct/2016 14:29:17] "GET /static/bower_components/angular.rangeSlider.css HTTP/1.1" 200 12544
+[01/Oct/2016 14:29:17] "GET /static/bower_components/font-awesome.css HTTP/1.1" 200 35134
+[01/Oct/2016 14:29:17] "GET /static/bower_components/animate.min.css HTTP/1.1" 200 52789
+[01/Oct/2016 14:29:17] "GET /static/bower_components/image-upload.css HTTP/1.1" 200 4777
+[01/Oct/2016 14:29:17] "GET /static/bower_components/ng-tags-input.css HTTP/1.1" 200 4137
+[01/Oct/2016 14:29:17] "GET /static/bower_components/chat/style.css HTTP/1.1" 200 2903
+[01/Oct/2016 14:29:17] "GET /static/bower_components/angular-growl.min.css HTTP/1.1" 200 507
+[01/Oct/2016 14:29:17] "GET /static/bower_components/imgur.css HTTP/1.1" 200 611
+[01/Oct/2016 14:29:17] "GET /static/bower_components/ngDialog/js/ngDialog.js HTTP/1.1" 200 14652
+[01/Oct/2016 14:29:17] "GET /static/bower_components/angular.rangeSlider.js HTTP/1.1" 200 31058
+[01/Oct/2016 14:29:17] "GET /static/bower_components/chat/index.js HTTP/1.1" 200 3496
+[01/Oct/2016 14:29:18] "GET /static/bower_components/bootstrap.css HTTP/1.1" 200 151942
+[01/Oct/2016 14:29:18] "GET /static/bower_components/image-upload.js HTTP/1.1" 200 46610
+[01/Oct/2016 14:29:18] "GET /static/bower_components/ngprogress.min.js HTTP/1.1" 200 3856
+[01/Oct/2016 14:29:18] "GET /static/bower_components/ng-tags-input.js HTTP/1.1" 200 47693
+[01/Oct/2016 14:29:18] "GET /static/bower_components/angular-touch.js HTTP/1.1" 200 22877
+[01/Oct/2016 14:29:18] "GET /static/bower_components/angular/angular-cache.js HTTP/1.1" 200 38153
+[01/Oct/2016 14:29:18] "GET /static/bower_components/angular/angular-resource.js HTTP/1.1" 200 26791
+[01/Oct/2016 14:29:18] "GET /static/bower_components/angular-moment.js HTTP/1.1" 200 19478
+[01/Oct/2016 14:29:18] "GET /static/bower_components/ng-imgur.js HTTP/1.1" 200 3855
+[01/Oct/2016 14:29:18] "GET /static/scripts/app.js HTTP/1.1" 200 5889
+[01/Oct/2016 14:29:18] "GET /static/bower_components/angular/angular-animate.js HTTP/1.1" 200 102635
+[01/Oct/2016 14:29:18] "GET /static/scripts/directives/Drop.js HTTP/1.1" 200 2432
+[01/Oct/2016 14:29:18] "GET /static/scripts/directives/image.js HTTP/1.1" 200 4046
+[01/Oct/2016 14:29:18] "GET /static/scripts/filters/qbloxuserById.js HTTP/1.1" 200 474
+[01/Oct/2016 14:29:18] "GET /static/scripts/services/FacebookService.js HTTP/1.1" 200 1310
+[01/Oct/2016 14:29:18] "GET /static/scripts/services/messageservice.js HTTP/1.1" 200 6176
+[01/Oct/2016 14:29:18] "GET /static/scripts/services/subjectservice.js HTTP/1.1" 200 1292
+[01/Oct/2016 14:29:18] "GET /static/scripts/services/tutorservice.js HTTP/1.1" 200 2722
+[01/Oct/2016 14:29:18] "GET /static/scripts/services/userservice.js HTTP/1.1" 200 8980
+[01/Oct/2016 14:29:18] "GET /static/scripts/controllers/about.js HTTP/1.1" 200 307
+[01/Oct/2016 14:29:18] "GET /static/scripts/controllers/dialog.js HTTP/1.1" 200 1798
+[01/Oct/2016 14:29:18] "GET /static/scripts/controllers/login.js HTTP/1.1" 200 2315
+[01/Oct/2016 14:29:18] "GET /static/scripts/controllers/main.js HTTP/1.1" 200 714
+[01/Oct/2016 14:29:18] "GET /static/scripts/controllers/messages.js HTTP/1.1" 200 294
+[01/Oct/2016 14:29:18] "GET /static/scripts/controllers/profile.js HTTP/1.1" 200 4844
+[01/Oct/2016 14:29:18] "GET /static/scripts/controllers/register.js HTTP/1.1" 200 1154
+[01/Oct/2016 14:29:18] "GET /static/scripts/controllers/tutor.js HTTP/1.1" 200 544
+[01/Oct/2016 14:29:18] "GET /static/scripts/controllers/tutors.js HTTP/1.1" 200 3620
+[01/Oct/2016 14:29:18] "GET /rest-auth/user/ HTTP/1.1" 403 58
+[01/Oct/2016 14:29:18] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028
+[01/Oct/2016 14:29:18] "GET /static/views/main.html HTTP/1.1" 200 1657
+[01/Oct/2016 14:29:18] "GET /static/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 71896
+[01/Oct/2016 14:29:18] "GET /template/typeahead/typeahead-popup.html HTTP/1.1" 404 3103
+[01/Oct/2016 14:29:18] "GET /api/subjects/ HTTP/1.1" 200 437
+[01/Oct/2016 14:29:19] "GET /static/assets/icons/android-icons/icon-normal.png HTTP/1.1" 404 1845
+[01/Oct/2016 14:29:19] "GET /static/assets/icons/android-icons/icon-hires.png HTTP/1.1" 404 1842
+[01/Oct/2016 14:29:19] "GET /static/images/yeoman.png HTTP/1.1" 200 13501
+[01/Oct/2016 14:29:27] "GET /admin HTTP/1.1" 301 0
+[01/Oct/2016 14:29:27] "GET /admin/ HTTP/1.1" 302 0
+[01/Oct/2016 14:29:27] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1676
+[01/Oct/2016 14:29:27] "GET /static/admin/css/login.css HTTP/1.1" 200 1203
+[01/Oct/2016 14:29:27] "GET /static/admin/css/base.css HTTP/1.1" 200 15897
+[01/Oct/2016 14:29:28] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[01/Oct/2016 14:29:28] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348
+[01/Oct/2016 14:29:28] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304
+[01/Oct/2016 14:29:28] "GET /favicon.ico HTTP/1.1" 404 3019
+[01/Oct/2016 14:40:06] "GET / HTTP/1.1" 200 10183
+[01/Oct/2016 14:40:07] "GET /rest-auth/user/ HTTP/1.1" 403 58
+[01/Oct/2016 14:40:07] "GET /template/typeahead/typeahead-popup.html HTTP/1.1" 404 3103
+[01/Oct/2016 14:40:07] "GET /api/subjects/ HTTP/1.1" 200 437
+[01/Oct/2016 14:40:17] "GET /static/bower_components/ng-tags-input.css.map HTTP/1.1" 404 1833
+[01/Oct/2016 14:40:30] "GET /static/views/tutors.html HTTP/1.1" 200 4273
+[01/Oct/2016 14:40:30] "GET /template/rating/rating.html HTTP/1.1" 404 3067
+[01/Oct/2016 14:40:30] "GET /api/subjects/ HTTP/1.1" 200 437
+[01/Oct/2016 14:40:30] "GET /template/typeahead/typeahead-popup.html HTTP/1.1" 404 3103
+[01/Oct/2016 14:40:30] "GET /%7B%7Btutor.avatar%7D%7D HTTP/1.1" 404 3042
+[01/Oct/2016 14:40:30] "GET /rest-auth/api/users/Tutor/ HTTP/1.1" 200 982
+[02/Oct/2016 07:50:33] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00')
+[02/Oct/2016 07:50:33] "    c                           " 400 -
+[06/Oct/2016 02:13:24] "GET / HTTP/1.1" 200 10183
+[06/Oct/2016 22:06:37] "GET / HTTP/1.1" 200 10183
+[07/Oct/2016 05:08:12] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02\x00\x01\x00\x01\xfc\x03\x03?\x1f\xceEq\xeb8\xee5\xdc\xc5')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 596, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 331, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/opt/TutrWebsite/venv/local/lib/python2.7/site-packages/django/core/servers/basehttp.py", line 99, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 652, in __init__
+    self.handle()
+  File "/opt/TutrWebsite/venv/local/lib/python2.7/site-packages/django/core/servers/basehttp.py", line 164, in handle
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib/python2.7/socket.py", line 480, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[09/Oct/2016 07:10:13] "GET / HTTP/1.0" 200 10183
+[09/Oct/2016 12:24:18] code 400, message Bad request syntax ('\x16\x03\x01\x02\x00\x01\x00\x01\xfc\x03\x03\x1e\x02\xfb\xe7\xb5\x9d}$1/GxoX\x81\x07?\x88\x93u\xd9ZE\xd4g\xc3\xdf\xee<\xd1\x15\xa2\x00\x00p\xc00\xc0,\xc02\xc0.\xc0/\xc0+\xc01\xc0-\x00\xa3\x00\x9f\x00\xa2\x00\x9e\xc0(\xc0$\xc0\x14\xc0')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+[10/Oct/2016 16:26:19] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00')
+[10/Oct/2016 16:26:19] "    c                           " 400 -
+[10/Oct/2016 19:01:30] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00')
+[10/Oct/2016 19:01:30] "    c                           " 400 -
+[13/Oct/2016 06:30:14] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00')
+[13/Oct/2016 06:30:14] "    c                           " 400 -
+[17/Oct/2016 23:23:20] "GET / HTTP/1.1" 200 10183
+[17/Oct/2016 23:23:38] "GET / HTTP/1.1" 200 10183
+[19/Oct/2016 15:50:26] "GET / HTTP/1.1" 200 10183
+[19/Oct/2016 22:03:30] "HEAD /OA_HTML/OA.jsp HTTP/1.0" 404 0
+[21/Oct/2016 06:10:00] code 400, message Bad request syntax ('\x16\x03\x01\x02\x00\x01\x00\x01\xfc\x03\x03O\xc7\xc4\x9b\xe5v\xf1\xf8\xa7v8\xa0\x89\xbcV\x82\xb2\xaa(o.\xba\xf5\xda#\x9b\xc7\x98\x1d\xe5$\xad\x00\x00p\xc00\xc0,\xc02\xc0.\xc0/\xc0+\xc01\xc0-\x00\xa3\x00\x9f\x00\xa2\x00\x9e\xc0(\xc0$\xc0\x14\xc0')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+[22/Oct/2016 02:37:43] code 400, message Bad request syntax ('\x16\x03\x01\x02\x00\x01\x00\x01\xfc\x03\x03Sp#\xc0\x0e\xea\x07\xbc\xd8s\xc2\x92\xaf\xc1\x06\x83\xe5\xfa+hI\x19\xa88\x1e\xba\xa2\xc7\xf5Z%\xac\x00\x00p\xc00\xc0,\xc02\xc0.\xc0/\xc0+\xc01\xc0-\x00\xa3\x00\x9f\x00\xa2\x00\x9e\xc0(\xc0$\xc0\x14\xc0')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+[22/Oct/2016 22:53:50] "GET / HTTP/1.1" 200 10183
+[23/Oct/2016 10:36:28] code 400, message Bad request version ('\xd5\x05\xf0\xbd^V\x8cW\xd1\xb6\xca\x00\x00p\xc00\xc0,\xc02\xc0.\xc0/\xc0+\xc01\xc0-\x00\xa3\x00\x9f\x00\xa2\x00\x9e\xc0(\xc0$\xc0\x14\xc0')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+[23/Oct/2016 11:53:45] "GET / HTTP/1.0" 200 10183
+[23/Oct/2016 11:56:10] "GET / HTTP/1.1" 200 10183
+[23/Oct/2016 11:57:13] "GET / HTTP/1.0" 200 10183
+[23/Oct/2016 11:59:50] "GET / HTTP/1.1" 200 10183
+[23/Oct/2016 23:34:07] code 400, message Bad request syntax ('\x16\x03\x01\x02\x00\x01\x00\x01\xfc\x03\x03\x1a\xa4\xe0\xd6\xe8~-\xac\xfa\xd9\x05<\x87\x87P\x876KslM\xb9O\x86\xd4&\xa0\xfe\xdd\x05.\xae\x00\x00p\xc00\xc0,\xc02\xc0.\xc0/\xc0+\xc01\xc0-\x00\xa3\x00\x9f\x00\xa2\x00\x9e\xc0(\xc0$\xc0\x14\xc0')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+[24/Oct/2016 01:53:46] code 400, message Bad request syntax ('\x16\x03\x01\x02\x00\x01\x00\x01\xfc\x03\x03\x05\xc3\x13&><;\xce\xb1S7\x90\xe5\xd5\xc2\x92#Ht\x0eG\xfa\x8f')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+[24/Oct/2016 09:03:02] "GET / HTTP/1.1" 200 10183
+[24/Oct/2016 09:03:05] "GET /static/bower_components/angular/angular-cookies.js HTTP/1.1" 200 5823
+[24/Oct/2016 09:03:05] "GET /static/bower_components/angular/angular-route.js HTTP/1.1" 200 35355
+[24/Oct/2016 09:03:05] "GET /static/bower_components/angular-growl.js HTTP/1.1" 200 6072
+[24/Oct/2016 09:03:05] "GET /static/bower_components/angular/angular-sanitize.js HTTP/1.1" 200 21793
+[24/Oct/2016 09:03:05] "GET /static/bower_components/angular.rangeSlider.css HTTP/1.1" 200 12544
+[24/Oct/2016 09:03:05] "GET /static/bower_components/bootstrap/dist/js/bootstrap.js HTTP/1.1" 200 68954
+[24/Oct/2016 09:03:08] "GET /static/bower_components/jquery/dist/jquery.js HTTP/1.1" 200 247597
+[24/Oct/2016 09:03:08] "GET /static/bower_components/underscore/underscore.js HTTP/1.1" 200 47559
+[24/Oct/2016 09:03:12] "GET /static/bower_components/angular/ui-bootstrap.js HTTP/1.1" 200 164832
+[24/Oct/2016 09:03:14] "GET /static/bower_components/font-awesome.css HTTP/1.1" 200 35134
+[24/Oct/2016 09:03:15] "GET /static/bower_components/image-upload.css HTTP/1.1" 200 4777
+[24/Oct/2016 09:03:16] "GET /static/bower_components/animate.min.css HTTP/1.1" 200 52789
+[24/Oct/2016 09:03:17] "GET /static/bower_components/ng-tags-input.css HTTP/1.1" 200 4137
+[24/Oct/2016 09:03:17] "GET /static/bower_components/chat/style.css HTTP/1.1" 200 2903
+[24/Oct/2016 09:03:18] "GET /static/bower_components/angular-growl.min.css HTTP/1.1" 200 507
+[24/Oct/2016 09:03:18] "GET /static/bower_components/angular.rangeSlider.js HTTP/1.1" 200 31058
+[24/Oct/2016 09:03:18] "GET /static/bower_components/chat/index.js HTTP/1.1" 200 3496
+[24/Oct/2016 09:03:18] "GET /static/bower_components/ngprogress.min.js HTTP/1.1" 200 3856
+[24/Oct/2016 09:03:20] "GET /static/bower_components/ngDialog/js/ngDialog.js HTTP/1.1" 200 14652
+[24/Oct/2016 09:03:20] "GET /static/bower_components/image-upload.js HTTP/1.1" 200 46610
+[24/Oct/2016 09:03:20] "GET /static/bower_components/angular/angular-resource.js HTTP/1.1" 200 26791
+[24/Oct/2016 09:03:21] "GET /static/bower_components/ng-tags-input.js HTTP/1.1" 200 47693
+[24/Oct/2016 09:03:22] "GET /static/bower_components/angular-touch.js HTTP/1.1" 200 22877
+[24/Oct/2016 09:03:22] "GET /static/bower_components/angular-moment.js HTTP/1.1" 200 19478
+[24/Oct/2016 09:03:23] "GET /static/bower_components/ng-imgur.js HTTP/1.1" 200 3855
+[24/Oct/2016 09:03:23] "GET /static/scripts/app.js HTTP/1.1" 200 5889
+[24/Oct/2016 09:03:23] "GET /static/scripts/directives/Drop.js HTTP/1.1" 200 2432
+[24/Oct/2016 09:03:24] "GET /static/scripts/directives/image.js HTTP/1.1" 200 4046
+[24/Oct/2016 09:03:25] "GET /static/scripts/filters/qbloxuserById.js HTTP/1.1" 200 474
+[24/Oct/2016 09:03:25] "GET /static/bower_components/angular/angular-animate.js HTTP/1.1" 200 102635
+[24/Oct/2016 09:03:25] "GET /static/scripts/services/messageservice.js HTTP/1.1" 200 6176
+[24/Oct/2016 09:03:27] "GET /static/bower_components/angular/angular-cache.js HTTP/1.1" 200 38153
+[24/Oct/2016 09:03:27] "GET /static/scripts/services/tutorservice.js HTTP/1.1" 200 2722
+[24/Oct/2016 09:03:27] "GET /static/scripts/services/userservice.js HTTP/1.1" 200 8980
+[24/Oct/2016 09:03:28] "GET /static/scripts/controllers/about.js HTTP/1.1" 200 307
+[24/Oct/2016 09:03:28] "GET /static/scripts/controllers/dialog.js HTTP/1.1" 200 1798
+[24/Oct/2016 09:03:29] "GET /static/scripts/services/FacebookService.js HTTP/1.1" 200 1310
+[24/Oct/2016 09:03:29] "GET /static/scripts/controllers/login.js HTTP/1.1" 200 2315
+[24/Oct/2016 09:03:29] "GET /static/scripts/controllers/main.js HTTP/1.1" 200 714
+[24/Oct/2016 09:03:29] "GET /static/scripts/services/subjectservice.js HTTP/1.1" 200 1292
+[24/Oct/2016 09:03:30] "GET /static/scripts/controllers/messages.js HTTP/1.1" 200 294
+[24/Oct/2016 09:03:30] "GET /static/scripts/controllers/profile.js HTTP/1.1" 200 4844
+[24/Oct/2016 09:03:30] "GET /static/scripts/controllers/register.js HTTP/1.1" 200 1154
+[24/Oct/2016 09:03:31] "GET /static/scripts/controllers/tutor.js HTTP/1.1" 200 544
+[24/Oct/2016 09:03:31] "GET /static/scripts/controllers/tutors.js HTTP/1.1" 200 3620
+[24/Oct/2016 09:03:32] "GET /static/images/yeoman.png HTTP/1.1" 200 13501
+[24/Oct/2016 09:03:35] "GET /static/bower_components/imgur.css HTTP/1.1" 200 611
+[24/Oct/2016 09:03:39] "GET /static/bower_components/bootstrap.css HTTP/1.1" 200 151942
+[24/Oct/2016 09:04:32] "GET /static/bower_components/angular/angular.js HTTP/1.1" 200 925789
+[24/Oct/2016 09:04:36] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028
+[24/Oct/2016 09:04:37] "GET /static/views/main.html HTTP/1.1" 200 1657
+[24/Oct/2016 09:04:37] "GET /static/assets/icons/android-icons/icon-hires.png HTTP/1.1" 404 1842
+[24/Oct/2016 09:04:43] "GET /favicon.ico HTTP/1.1" 404 3019
+[24/Oct/2016 09:04:44] "GET /rest-auth/user/ HTTP/1.1" 403 58
+[24/Oct/2016 09:04:44] "GET /favicon.ico HTTP/1.1" 404 3019
+[24/Oct/2016 09:04:45] "GET /template/typeahead/typeahead-popup.html HTTP/1.1" 404 3103
+[24/Oct/2016 09:04:47] "GET /static/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 71896
+[24/Oct/2016 09:05:08] "GET /static/assets/icons/android-icons/icon-normal.png HTTP/1.1" 404 1845
+[24/Oct/2016 09:05:14] "GET /api/subjects/ HTTP/1.1" 200 437
+[24/Oct/2016 09:08:54] "GET /static/views/tutors.html HTTP/1.1" 200 4273
+[24/Oct/2016 09:08:54] "GET /%7B%7Btutor.avatar%7D%7D HTTP/1.1" 404 3042
+[24/Oct/2016 09:08:55] "GET /template/rating/rating.html HTTP/1.1" 404 3067
+[24/Oct/2016 09:08:55] "GET /api/subjects/ HTTP/1.1" 200 437
+[24/Oct/2016 09:08:55] "GET /rest-auth/api/users/Tutor/ HTTP/1.1" 200 982
+[24/Oct/2016 09:08:55] "GET /template/typeahead/typeahead-popup.html HTTP/1.1" 404 3103
+[24/Oct/2016 09:09:22] "GET /api/subjects/ HTTP/1.1" 200 437
+[24/Oct/2016 09:09:22] "GET /template/typeahead/typeahead-popup.html HTTP/1.1" 404 3103
+[24/Oct/2016 09:09:32] "GET /template/rating/rating.html HTTP/1.1" 404 3067
+[24/Oct/2016 09:09:32] "GET /%7B%7Btutor.avatar%7D%7D HTTP/1.1" 404 3042
+[24/Oct/2016 13:12:19] code 400, message Bad request syntax ("\x16\x03\x01\x02\x00\x01\x00\x01\xfc\x03\x03\x18'\xa3\xe72\x8ecg)\x902\xc2\x07\xe59\x90\x9d\xf4\\\x19\xb9\xf4\x06XV\x92\x81+A\x87\x8c\x13\x00\x00p\xc00\xc0,\xc02\xc0.\xc0/\xc0+\xc01\xc0-\x00\xa3\x00\x9f\x00\xa2\x00\x9e\xc0(\xc0$\xc0\x14\xc0")
+You're accessing the development server over HTTPS, but it only supports HTTP.
+[24/Oct/2016 22:29:45] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02\x00\x01\x00\x01\xfc\x03\x03\x89\x06\xe2\xba\x943\x15\x89\xbb/\xb4\xea\xd5\x93j\\\xff\xa3\xe0')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+[25/Oct/2016 21:14:38] code 400, message Bad request syntax ('\x16\x03\x01\x02\x00\x01\x00\x01\xfc\x03\x03\xf7\x8d{\x16f\x8d\xda\xbf\x88(\xf9\xa1?"qc\x93\xfe\xa5\xe7\x9d\x82y\x93S\xff\xf7\xc5\x86-\xe6z\x00\x00p\xc00\xc0,\xc02\xc0.\xc0/\xc0+\xc01\xc0-\x00\xa3\x00\x9f\x00\xa2\x00\x9e\xc0(\xc0$\xc0\x14\xc0')
+You're accessing the development server over HTTPS, but it only supports HTTP.
